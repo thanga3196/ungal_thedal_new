@@ -1,0 +1,145 @@
+<div class="header">
+  <section class="header-top container-fluid ps-3 pe-3 d-flex bg-color-{{theme.primaryColor}}">
+    <div class="row">
+      <div
+        class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 header-top-left d-flex justify-content-start align-items-center ps-3 pe-0 m-0">
+        <p class="color-{{theme.teritaryColor}} m-0 header-top-left-mail">contact@ungalthedal.com</p>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 header-top-right d-flex pe-3 ps-0">
+        <ul class="p-0 m-0 color-{{theme.teritaryColor}}">
+          <li class="non-mandatory justify-content-center">
+            <fa-icon [icon]="faPalette"></fa-icon>
+            <div class="palette-link" (click)="showPalette = !showPalette"></div>
+            <div class="header-top-right-dropdown palette bg-color-white" *ngIf="showPalette">
+              <ul>
+                <li *ngFor="let palette of paletteList" (click)="changePalette(palette.theme)">
+                  <div class="bg-color-{{palette.theme.primaryColor}}"></div>
+                  <span class="text-uppercase">{{palette.name}}</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="non-mandatory justify-content-center">
+            <fa-icon [icon]="faLanguage"></fa-icon>
+            <div class="lang-link" (click)="showLang = !showLang"></div>
+            <div class="header-top-right-dropdown language bg-color-white" *ngIf="showLang">
+              <ul>
+                <li *ngFor="let lang of langList" (click)="changeLanguage(lang.lang)">
+                  <span class="text-uppercase p-0">{{lang.name}}</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="justify-content-center">
+            <fa-icon [icon]="faBell"></fa-icon>
+            <sup
+              *ngIf="messageNonReadCount > 0">{{messageNonReadCount > 99 ? 99 + '' : messageNonReadCount}}</sup>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="container-fluid header-menu ps-3 pe-0 d-flex bg-color-{{theme.teritaryColor}}">
+    <div class="header-brand d-flex justify-content-center align-items-left flex-column">
+      <h5>{{'ungal' | translate: lang}}</h5>
+      <h3 class="d-flex flex-row color-{{theme.primaryColor}}">{{'thedal' | translate: lang}}<h5 class="color-black">
+        .com</h5></h3>
+    </div>
+    <div class="header-menu-wrapper">
+      <ul class="header-menu-left ps-0">
+        <li *ngFor="let menu of menuList" class="non-mandatory">
+          <a
+            [ngClass]="[isActive(menu.routerLink) ? 'position-relative border-bottom-3px-solid-'+theme.primaryColor:'position-relative', isActive(menu.routerLink) ? 'color-'+theme.secondaryColor:'color-'+theme.secondaryColor]"
+            [routerLink]="menu.routerLink">{{menu.name | translate: lang}}
+            <div *ngIf="menu.children.length > 0" class="service-link" (click)="menu.clicked = !menu.clicked"></div>
+          </a>
+          <div *ngIf="menu.children.length > 0 && menu.clicked"
+               class="header-menu-left-dropdown bg-color-white">
+            <div class="slider">
+              <div class="left" (click)="scrollLeft()">
+                <fa-icon [icon]="faAngleLeft"></fa-icon>
+              </div>
+              <div #servicesList class="list">
+                <div class="list-item bg-color-{{theme.teritaryColor}} color-black"
+                     *ngFor="let subMenu of menu.children" [routerLink]="subMenu.routerLink"
+                     (click)="menu.clicked = false">
+                  <img src="assets/images/icons/{{subMenu.logo}}.png"/>
+                  <div class="position-absolute bottom-0">
+                    <span class="text-center"
+                          [routerLink]="subMenu.routerLink">{{subMenu.name | translate: lang}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="right" (click)="scrollRight()">
+                <fa-icon [icon]="faAngleRight"></fa-icon>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li *ngFor="let adminMenu of adminMenuList"
+            class="non-mandatory align-content-center align-items-center pe-0 position-relative width-210px justify-items-center">
+          <a [routerLink]="adminMenu.routerLink"
+             class="position-relative width-210px d-flex justify-content-center">
+            <span>{{adminMenu.name | translate: lang}}</span>
+            <div class="admin-link" (click)="showAdministration = !showAdministration"></div>
+            <fa-icon [icon]="faAngleDown" class="ps-3"></fa-icon>
+            <div *ngIf="showAdministration" class="admin-list en">
+              <ul>
+                <li *ngFor="let adminSubMenu of adminMenu.children" (click)="expandAdminMenu(adminSubMenu, $event)">
+                  <a [routerLink]="adminSubMenu.routerLink" class="p-0">
+                    <span>{{adminSubMenu.name}}</span>
+                    <fa-icon *ngIf="adminMenu.children.length > 0" [icon]="faAngleDown"></fa-icon>
+                    <ul *ngIf="adminSubMenu.clicked">
+                      <li *ngFor="let adminListMenu of adminSubMenu.children">
+                        <a [routerLink]="adminListMenu.routerLink" (click)="showAdministration = false" class="ps-1">
+                          <span>{{adminListMenu.name}}</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </a>
+        </li>
+        <li class="position-relative profile non-mandatory justify-content-center align-items-center pe-0"
+            style="top: 0px">
+          <button *ngIf="!isLoggedIn()" class="login non-mandatory me-2 bg-color-{{theme.primaryColor}}"
+                  routerLink="/login">
+            Login
+          </button>
+          <a *ngIf="isLoggedIn()" class="position-relative">
+            <div class="profile-link" (click)="showProfile = !showProfile"></div>
+            <img class="border-3px-solid-{{theme.primaryColor}}" src="../../../../assets/images/profile_img.jpg"/>
+            <fa-icon [icon]="faAngleDown"></fa-icon>
+            <div *ngIf="showProfile" class="profile-menu en">
+              <div class="text-center">
+                <h6 class="m-0 font-size-16px line-height-40px">Thangavel Ayyasamy</h6>
+                <h6 class="m-0 pb-2 font-size-13px">Administrator</h6>
+              </div>
+              <ul class="profile-menu-list">
+                <li *ngFor="let profileMenu of profileMenuList" class="align-items-center">
+                  <fa-icon [icon]="profileMenu.icon" class="height-40px line-height-40px"></fa-icon>
+                  <span
+                    class="ps-5 {{lang}} height-40px  line-height-37px">{{profileMenu.name | translate: lang}}</span>
+                </li>
+                <li class="align-items-center" (click)="logout()">
+                  <fa-icon [icon]="faRightFromBracket" class="height-40px line-height-40px"></fa-icon>
+                  <span
+                    class="ps-5 {{lang}} height-40px  line-height-37px">{{'Logout' | translate: lang}}</span>
+                </li>
+              </ul>
+            </div>
+          </a>
+        </li>
+        <li class="position-relative pe-3 bar">
+          <div class="bar-link" (click)="openMenu()"></div>
+          <fa-icon [icon]="faBars" class="p-0 ps-2"></fa-icon>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="container-fluid sub-header p-0">
+
+  </section>
+</div>

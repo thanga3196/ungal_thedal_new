@@ -1,0 +1,47 @@
+<div class="side-menu" [@openClose]="showMenu ? 'open' : 'closed'">
+  <div class="container-fluid p-0 height-100per">
+    <div class="row height-82px m-0 brand">
+      <div class="col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-content-start">
+        <div class="d-flex flex-column">
+          <h3 class="color-white m-0">ungal</h3>
+          <h1 class="d-flex flex-row color-dodger-blue m-0">thedal<h3 class="color-white m-0 line-height-40px">.com</h3>
+          </h1>
+        </div>
+        <fa-icon [icon]="faClose" class="close" (click)="closeMenu(undefined)"></fa-icon>
+      </div>
+    </div>
+    <div class="menu-list m-0">
+      <ul class="menu en text-uppercase">
+        <li *ngFor="let menu of menuList" (click)="closeMenu(menu);expandOrCollapse(menu, $event)">
+          <a [routerLink]="menu.routerLink">{{ menu.name }}
+            <fa-icon *ngIf="menu.children && menu.children.length > 0" class="ps-3"
+                     [icon]="menu.clicked ? faAngleUp:faAngleDown">
+            </fa-icon>
+            <ul *ngIf="menu.clicked" class="sub-menu">
+              <li *ngFor="let subMenu of menu.children">
+                <a (click)="closeMenu(subMenu);expandOrCollapse(subMenu, $event)">{{subMenu.name}}</a>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li *ngFor="let otherSetting of otherSettingsList">
+          <a [routerLink]="otherSetting.routerLink"
+             (click)="closeMenu(otherSetting);expandOrCollapse(otherSetting, $event)">{{ otherSetting.name }}
+            <fa-icon *ngIf="otherSetting.children && otherSetting.children.length > 0" class="ps-3"
+                     [icon]="otherSetting.clicked ? faAngleUp:faAngleDown">
+            </fa-icon>
+            <ul *ngIf="otherSetting.clicked" class="sub-menu">
+              <li *ngFor="let subMenu of otherSetting.children"
+                  (click)="closeMenu(subMenu);expandOrCollapse(subMenu, $event);changePaletteOrLanguage(subMenu)">
+                <a>{{subMenu.name}}</a>
+              </li>
+            </ul>
+          </a>
+        </li>
+        <li>
+          <button class="login text-uppercase" routerLink="/login">Login</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

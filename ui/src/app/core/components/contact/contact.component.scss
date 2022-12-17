@@ -1,0 +1,78 @@
+@use "../../../../styles/variables";
+@import "../../../../styles/import";
+@import "../../../../styles/z-index";
+@import "../../../../styles/bg-color";
+
+.contact-details fa-icon {
+  font-size: 2.5em;
+}
+
+label,
+.form-control,
+fa-icon,
+h3,
+h5 {
+  margin-bottom: 0.5em;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+.contact-detail-list .card-img-top {
+  height: 250px;
+}
+
+@media all and (max-width: 576px) {
+  .card {
+    margin-bottom: 10px;
+  }
+  .contact-button {
+    display: inline-flex;
+  }
+  .contact-button button {
+    width: 50%;
+  }
+}
+
+@media all and (min-width: 576px) {
+  .card {
+    margin-bottom: 10px;
+  }
+  .contact-button {
+    display: inline-flex;
+  }
+  .contact-button button {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contact-details h5 {
+    font-size: 16px;
+  }
+  .contact-button {
+    display: inline-flex;
+  }
+  .contact-button button {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .contact-details h5 {
+    font-size: 16px;
+  }
+  .contact-button {
+    display: inline-flex;
+  }
+  .contact-button button {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .contact-details h5 {
+    font-size: 16px;
+  }
+}

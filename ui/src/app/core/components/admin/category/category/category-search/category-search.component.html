@@ -1,0 +1,111 @@
+<div class="height-112px"></div>
+<div [ngBusy]="{busy: busyLoading, message: 'Loading...'}"></div>
+<div [ngBusy]="{busy: busyDeleting, message: 'Deleting...'}"></div>
+<p-confirmDialog #cd [style]="{width: '50vw'}" header="Confirmation" icon="pi pi-exclamation-triangle">
+  <ng-template pTemplate="footer">
+    <button type="button" pButton icon="pi pi-times p-danger" label="No" (click)="cd.reject()"></button>
+    <button type="button" pButton icon="pi pi-check p-success" label="Yes" (click)="cd.accept()"></button>
+  </ng-template>
+</p-confirmDialog>
+<div class="container-fluid category-search bg-color-white p-0 m-0">
+  <div class="row width-100per align-items-center text-center pt-5 pb-5 gap-4 background-about position-relative">
+    <div class="width-100per height-100per position-absolute p-0 bg-color-black-layer"></div>
+    <h1
+      class="ps-2 color-{{theme.teritaryColor}} m-0 text-uppercase z-index-998 font-size-2_5rem pb-2 {{lang}}">{{'Category - Search' | translate: lang}}</h1>
+    <nav style="margin-top: -18px;
+    padding-left: 0.6rem !important;" aria-label="breadcrumb" class="ps-3">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item text-uppercase z-index-998 color-{{theme.primaryColor}}"><a href="home"
+                                                                                               style="text-decoration: none;"
+                                                                                               class="color-{{theme.primaryColor}} font-size-1-4rem {{lang}}">Home</a>
+        </li>
+        <li
+          class="breadcrumb-item text-uppercase active z-index-998 color-{{theme.teritaryColor}} font-size-1-4rem {{lang}}"
+          aria-current="page">Category Search
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="row height-20px p-0 m-0"></div>
+  <div class="row p-0 m-0">
+    <div class="col-xl-6 col-lg-6 col-md-12 ps-2 height-100per">
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 pe-2 text-right height-100per line-height-44px ps-5 pe-5">
+      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5">
+        <a routerLink="../category/0" class="color-white text-decoration-none" target="_blank">Add</a>
+      </button>
+    </div>
+  </div>
+  <div class="row p-0 m-0">
+    <div class="container-fluid ps-5 pe-5">
+      <form [formGroup]="categorySearchForm">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            <label for="nme" class="color-black">Name</label>
+            <input type="text" id="nme" formControlName="nme" class="form-control mt-1"
+                   placeholder="Enter Name"/>
+            <div *ngIf="submitted && categorySearchForm.controls['nme'].errors" class="mt-1">
+              <div *ngIf="categorySearchForm.controls['nme'].errors['minlength']" class="color-red">Name
+                should be 3 or
+                more characters long.
+              </div>
+              <div *ngIf="categorySearchForm.controls['nme'].errors['maxlength']" class="color-red">Name
+                should not be
+                more than 60 characters long.
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            <label for="active" class="color-black">Active</label>
+            <p-dropdown id="active" [options]="yesOrNoList" optionLabel="nme" optionValue="id"
+                        class="d-flex width-100per" formControlName="active" placeholder="Select Active">
+            </p-dropdown>
+            <div *ngIf="submitted && categorySearchForm.controls['active'].errors" class="mt-1">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row p-0 m-0 pt-2 ps-5 pe-5">
+    <div class="col-xl-6 col-lg-6 col-md-12 ps-2 height-100per">
+      <h6 *ngIf="showAlert" class="line-height-40px m-0 {{alert.type}}">{{alert.msg}}</h6>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 text-right height-100per line-height-44px p-0">
+      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="search()">
+        Search
+      </button>
+      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5" (click)="reset()">
+        Reset
+      </button>
+    </div>
+  </div>
+  <div class="row p-0 m-0 ps-5 pe-5 mt-3">
+    <p-table [value]="categoryList" styleClass="p-datatable-gridlines" class="p-0" responsiveLayout="scroll"
+             [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+             [rowsPerPageOptions]="[10,25,50]">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="nme">Name
+            <p-sortIcon field="nme"></p-sortIcon>
+          </th>
+          <th>Active</th>
+          <th style="width: 100px;">Action</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-category>
+        <tr>
+          <td><a routerLink='/admin/category/{{category.id}}' target="_blank">{{category.nme}}</a></td>
+          <td>{{category.active ? "Yes" : "No"}}</td>
+          <td style="width: 100px;cursor:pointer" class="text-center cursor-pointer">
+            <fa-icon [icon]="faTrash" (click)="delete(category)"></fa-icon>
+          </td>
+        </tr>
+      </ng-template>
+      <!--<ng-template pTemplate="summary">
+          Footer
+      </ng-template>-->
+    </p-table>
+  </div>
+</div>

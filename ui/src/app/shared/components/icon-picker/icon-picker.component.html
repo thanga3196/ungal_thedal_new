@@ -1,0 +1,13 @@
+<div class="container-fluid p-0 m-0 mt-1 icon" (click)="showIconList()">
+  <span class="span" [id]="id">
+    <span *ngIf="selectedIcon" class="m-0">{{selectedIcon.nme}}</span>
+  </span>
+  <div class="button">
+    <span class="pi pi-chevron-down" [id]="buttonId"></span>
+  </div>
+  <div class="container-fluid list p-2" *ngIf="showDiv">
+    <div class="item" *ngFor="let icon of iconList" (click)="selectItem(icon)">
+      <img [src]=icon.path alt=""/>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container-fluid h-100 p-2 d-flex">
+  <fa-icon class="d-flex align-items-center p-2 color-{{theme.primaryColor}}" *ngIf="icon != undefined" [icon]="icon"
+    [ngStyle]="{ 'font-size': iconSize }"></fa-icon>
+  <input class="input" type="text" [id]="id" [placeholder]="placeHolder" class="en w-100 border-0 outline-0"
+    [ngStyle]="{ 'font-size': fontSize }" [value]="selectedItem.nme" (input)="contains($event)"
+    (focus)="showSuggestionBox()" autocomplete="off"/>
+  <fa-icon class="d-flex align-items-center p-2" [icon]="faXMark" (click)="clearText()"
+    *ngIf="this.selectedItem.id != 0" [ngStyle]="{ color: '#000000', 'font-size': '18px', 'cursor':'pointer' }">
+  </fa-icon>
+  <div class="container-fluid suggestion-box" *ngIf="showDiv">
+    <ul class="p-0 m-0 en">
+      <li *ngFor="let item of filteredItems" (click)="selectItem(item)">
+        {{ item[value] }}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+<div [ngBusy]="{busy: busyRegister, message: 'Registering...'}"></div>
+<div class="container-fluid m-0 p-0 register en">
+  <div class="row height-100per justify-content-center">
+    <div class="col-xl-6 col-lg-6 col-md-12 left p-0 height-100per m-0">
+      <!--<video #loginVideo class="object-fit-fill" width="100%" height="100%" autoplay muted loop>
+        <source src="assets/videos/login.mp4">
+      </video>-->
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 right p-5 height-100per m-0">
+      <h2 class="color-{{theme.primaryColor}} text-uppercase mt-2">Register</h2>
+      <form [formGroup]="registerForm">
+        <div class="container-fluid m-0 p-0">
+          <div class="row pt-3">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <label class="text-uppercase">First Name</label>
+              <input type="text" placeholder="Enter First Name" formControlName="firstName"
+                     class="form-control mt-2"/>
+              <div *ngIf="submitted && registerForm.controls['firstName'].errors" class="mt-1 color-red">
+                <div *ngIf="registerForm.controls['firstName'].errors['required']">First Name is
+                  required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <label class="text-uppercase">Last Name</label>
+              <input type="text" placeholder="Enter Last Name" formControlName="lastName"
+                     class="form-control mt-2"/>
+              <div *ngIf="submitted && registerForm.controls['lastName'].errors" class="mt-1 color-red">
+                <div *ngIf="registerForm.controls['lastName'].errors['required']">Last Name is
+                  required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <label class="text-uppercase">Gender</label>
+              <div class="pt-2">
+                <label>
+                  <input type="radio" value="Male" formControlName="gender">
+                  <span class="ps-2 text-uppercase">Male</span>
+                </label>
+                <label class="ps-2">
+                  <input type="radio" value="Female" formControlName="gender">
+                  <span class="ps-2 text-uppercase">Female</span>
+                </label>
+                <label class="ps-2">
+                  <input type="radio" value="Others" formControlName="gender">
+                  <span class="ps-2 text-uppercase">Others</span>
+                </label>
+              </div>
+              <div *ngIf="submitted && registerForm.controls['gender'].errors" class="mt-1 color-red">
+                <div *ngIf="registerForm.controls['gender'].errors['required']">Gender is
+                  required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <label class="text-uppercase">Mobile</label>
+              <div class="pt-2 d-flex">
+                <select class="form-select width-80px" formControlName="countryCde">
+                  <option *ngFor="let country of countryList" value="{{country.mobileCde}}">{{country.cde}}</option>
+                </select>
+                <input type="text" placeholder="Enter Mobile Number" formControlName="mobile"
+                       class="form-control" mask="0999999999" [patterns]="customMobilePattern"/>
+              </div>
+              <div *ngIf="submitted && registerForm.controls['mobile'].errors" class="mt-1 color-red">
+                <div *ngIf="registerForm.controls['mobile'].errors['required']">Mobile Number is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <label class="text-uppercase">Email</label>
+              <input type="text" placeholder="Enter Email" formControlName="email"
+                     class="form-control mt-2"/>
+              <div *ngIf="submitted && registerForm.controls['email'].errors" class="mt-1 color-red">
+                <div *ngIf="registerForm.controls['email'].errors['required']">Email is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <label class="text-uppercase">Password</label>
+              <input type="password" placeholder="Enter Password" formControlName="password"
+                     class="form-control mt-2"/>
+              <div *ngIf="submitted && registerForm.controls['password'].errors" class="mt-1 color-red">
+                <div *ngIf="registerForm.controls['password'].errors['required']">Password is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <label class="text-uppercase">Re-Enter Password</label>
+              <input type="password" placeholder="Enter Password"
+                     formControlName="reEnterPassword" class="form-control mt-2"/>
+              <div *ngIf="submitted && registerForm.controls['reEnterPassword'].errors" class="mt-1 color-red">
+                <div *ngIf="registerForm.controls['reEnterPassword'].errors['required']">Confirm
+                  Password is
+                  required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-2">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <input type="button" value="Register"
+                     class="form-control mt-2 bg-color-{{theme.secondaryColor}} text-uppercase" (click)="register()"/>
+            </div>
+          </div>
+          <div class="row pt-2">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <h6 class="text-uppercase mt-3">Already have an account? <a class="color-{{theme.primaryColor}}"
+                                                                          routerLink="../login">Login</a></h6>
+            </div>
+          </div>
+          <div class="row pt-2">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <h6 class="text-uppercase mt-1">Want to go? <a class="color-{{theme.primaryColor}}"
+                                                             routerLink="../home">Home</a>
+              </h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <h6 *ngIf="showAlert" class="text-center line-height-40px {{alert.type}}">{{alert.msg}}</h6>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

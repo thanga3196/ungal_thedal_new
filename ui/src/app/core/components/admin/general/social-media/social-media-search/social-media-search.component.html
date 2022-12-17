@@ -1,0 +1,29 @@
+<div class="height-112px"></div>
+<div [ngBusy]="{busy: busyLoading, message: 'Loading...'}"></div>
+<div [ngBusy]="{busy: busyDeleting, message: 'Deleting...'}"></div>
+<p-confirmDialog #cd [style]="{width: '50vw'}" header="Confirmation" icon="pi pi-exclamation-triangle">
+  <ng-template pTemplate="footer">
+    <button type="button" pButton icon="pi pi-times p-danger" label="No" (click)="cd.reject()"></button>
+    <button type="button" pButton icon="pi pi-check p-success" label="Yes" (click)="cd.accept()"></button>
+  </ng-template>
+</p-confirmDialog>
+<div class="container-fluid social-media-search bg-color-white">
+  <div class="row align-items-center text-center pt-5 pb-5 gap-4 background-about position-relative">
+    <div class="width-100per height-100per position-absolute p-0 bg-color-black-layer"></div>
+    <h1
+      class="ps-2 color-{{theme.teritaryColor}} m-0 text-uppercase z-index-998 font-size-2_5rem pb-2 {{lang}}">{{'About Us' | translate: lang}}</h1>
+    <nav style="margin-top: -18px;
+    padding-left: 0.6rem !important;" aria-label="breadcrumb" class="ps-3">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item text-uppercase z-index-998 color-{{theme.primaryColor}}"><a href="home"
+                                                                                               style="text-decoration: none;"
+                                                                                               class="color-{{theme.primaryColor}} font-size-1-4rem {{lang}}">Home</a>
+        </li>
+        <li
+          class="breadcrumb-item text-uppercase active z-index-998 color-{{theme.teritaryColor}} font-size-1-4rem {{lang}}"
+          aria-current="page">About Us
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>

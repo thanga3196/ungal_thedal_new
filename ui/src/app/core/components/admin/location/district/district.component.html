@@ -1,0 +1,75 @@
+<div class="height-112px"></div>
+<div [ngBusy]="{busy: busyLoading, message: 'Loading...'}"></div>
+<div [ngBusy]="{busy: busySaving, message: 'Saving...'}"></div>
+<div class="container-fluid about bg-color-white p-5 pt-3">
+  <div class="row height-100px align-items-center ms-0">
+    <h2 class="ps-2 color-black m-0">District</h2>
+    <nav style="margin-top: -18px;
+    padding-left: 0.6rem !important;" aria-label="breadcrumb" class="ps-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="home" style="text-decoration: none;">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">District</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="row p-0 m-0 border-1px-light-gray box-shadow-normal height-50px line-height-50px">
+    <div class="col-xl-6 col-lg-6 col-md-12 ps-2 height-100per">
+      <h6 *ngIf="showAlert" class="line-height-40px {{alert.type}}">{{alert.msg}}</h6>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 pe-2 text-right height-100per line-height-44px">
+      <button class="btn bg-color-theme color-white ps-5 pe-5 me-1" (click)="reset()">
+        Add
+      </button>
+      <button class="btn bg-color-theme color-white ps-5 pe-5 me-1" (click)="save()">
+        Save
+      </button>
+    </div>
+  </div>
+  <div class="row p-0 m-0">
+    <div class="container-fluid border-1px-light-gray box-shadow-normal p-3">
+      <form [formGroup]="districtForm">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            <label for="nme" class="color-black">Name<span class="color-red">*</span></label>
+            <input type="text" id="nme" formControlName="nme" class="form-control mt-1" placeholder="Enter Name" />
+            <div *ngIf="submitted && districtForm.controls['nme'].errors" class="mt-1">
+              <div *ngIf="districtForm.controls['nme'].errors['required']" class="color-red">Name is
+                required.
+              </div>
+              <div *ngIf="districtForm.controls['nme'].errors['minlength']" class="color-red">Name should be 3 or
+                more characters long.
+              </div>
+              <div *ngIf="districtForm.controls['nme'].errors['maxlength']" class="color-red">Name should not be
+                more than 60 characters long.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            <label for="stateId" class="color-black">State<span class="color-red">*</span></label>
+            <p-dropdown id="stateId" [options]="stateList" optionLabel="nme" optionValue="id"
+              class="d-flex width-100per" formControlName="stateId" placeholder="Select State">
+            </p-dropdown>
+            <div *ngIf="submitted && districtForm.controls['stateId'].errors" class="mt-1">
+              <div *ngIf="districtForm.controls['stateId'].errors['required']" class="color-red">State is
+                required.
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            <label for="active" class="color-black">Active<span class="color-red">*</span></label>
+            <p-dropdown id="active" [options]="yesOrNoList" optionLabel="nme" optionValue="id"
+              class="d-flex width-100per" formControlName="active" placeholder="Select Active">
+            </p-dropdown>
+            <div *ngIf="submitted && districtForm.controls['active'].errors" class="mt-1">
+              <div *ngIf="districtForm.controls['active'].errors['required']" class="color-red">Active is
+                required.
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

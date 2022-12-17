@@ -1,0 +1,102 @@
+@use "src/styles/variables";
+@import "src/styles/bg-color";
+
+.footer {
+  font-size: 16px;
+}
+
+.footer-brand {
+  height: 70px;
+}
+
+.footer-brand h3, .footer-brand h1 {
+  margin-bottom: 0;
+}
+
+.footer-brand h3 {
+  align-items: flex-end !important;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer .menu ul {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.footer .menu ul li {
+  color: variables.$white;
+}
+
+.footer .menu ul > li span:hover {
+  cursor: pointer;
+}
+
+.footer .copyright {
+  color: variables.$white;
+}
+
+.footer .copyright ul {
+  list-style: none;
+  display: inline-flex;
+}
+
+.footer .copyright ul li {
+  padding-left: 1rem;
+}
+
+@media all and (max-width: 576px) {
+  .copyright .right {
+    padding-top: 1rem;
+  }
+  .copyright .left, .copyright .right {
+    justify-content: center !important;
+  }
+}
+
+@media all and (min-width: 576px) {
+  .copyright .right {
+    padding-top: 1rem;
+  }
+
+  .copyright .left, .copyright .right {
+    justify-content: center !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .copyright .right {
+    padding-top: 1rem;
+  }
+
+  .copyright .left, .copyright .right {
+    justify-content: center !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .copyright .right {
+    padding-top: 1rem;
+  }
+
+  .copyright .left, .copyright .right {
+    justify-content: center !important;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+  .copyright .right {
+    padding-top: 0;
+  }
+
+  .copyright .left {
+    justify-content: left !important;
+  }
+
+  .copyright .right {
+    justify-content: right !important;
+  }
+}

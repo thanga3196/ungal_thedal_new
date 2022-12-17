@@ -1,0 +1,65 @@
+<div class="footer container-fluid p-0 bg-color-{{theme.secondaryColor}}">
+  <section class="container-fluid menu pt-5 pb-5 bg-color-dark-gun-metal">
+    <div class="container-fluid ps-1 pe-1">
+      <div class="row">
+        <div class="col-md-12 col-lg-3 pt-3 ps-3">
+          <div class="footer-brand d-flex justify-content-center align-items-left flex-column">
+            <h3 class="color-{{theme.teritaryColor}}">ungal</h3>
+            <h1 class="d-flex flex-row color-{{theme.primaryColor}}">thedal<h3
+              class="color-{{theme.teritaryColor}} d-flex align-content-end">.com</h3></h1>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-3 pt-3">
+          <h5 class="color-{{theme.primaryColor}} text-uppercase">Menu</h5>
+          <ul class="pt-4">
+            <li *ngFor="let menu of menuList" class="pb-3">
+              <span class="color-{{theme.teritaryColor}} text-uppercase">{{menu.name}}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-12 col-lg-3 pt-3">
+          <h5 class="color-{{theme.primaryColor}} text-uppercase">Follow Us</h5>
+          <ul class="pt-4">
+            <li class="pb-3">
+              <span class="color-{{theme.teritaryColor}}">Facebook</span>
+            </li>
+            <li class="pb-3">
+              <span class="color-{{theme.teritaryColor}}">Instagram</span>
+            </li>
+            <li class="pb-3">
+              <span class="color-{{theme.teritaryColor}}">Twitter</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-12 col-lg-3 pt-3">
+          <h5 class="color-{{theme.primaryColor}} text-uppercase">Contact Us</h5>
+          <ul class="pt-4">
+            <li class="pb-3">
+              <h4 class="color-{{theme.teritaryColor}}">+91 91135 90303</h4>
+            </li>
+            <li>
+              <h6 class="color-{{theme.teritaryColor}}">contact@ungalthedal.com</h6>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="copyright container-fluid pt-3 pb-3 bg-color-{{theme.secondaryColor}}">
+    <div class="container-fluid p-0">
+      <div class="row align-items-center">
+        <div class="col-md-12 col-lg-12 col-xl-6 text-left left d-flex">
+          <span class="color-{{theme.teritaryColor}}">&copy; Copyright {{year}} <span
+            class="color-{{theme.primaryColor}}">Uthra Technologies</span>. All Rights Reserved.</span>
+        </div>
+        <div
+          class="col-md-12 col-lg-12 col-xl-6 text-right right align-items-center d-flex justify-content-end align-items-center">
+          <ul class="m-0">
+            <li><span class="color-{{theme.teritaryColor}}">Privacy Policy</span></li>
+            <li><span class="color-{{theme.teritaryColor}}">Terms & Conditions</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

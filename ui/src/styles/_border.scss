@@ -1,0 +1,482 @@
+@use "variables";
+
+.border-1px-bright-gray {
+  border: 1px solid variables.$bright-gray;
+}
+
+.border-1px-light-gray {
+  border: 1px solid variables.$light-gray;
+}
+
+.border-bottom-2px-solid-dodger-blue {
+  border-bottom: 2px solid variables.$dodger-blue !important;
+}
+
+.border-bottom-2px-solid-sunshine {
+  border-bottom: 2px solid variables.$sunshine !important;
+}
+
+.border-bottom-2px-solid-red {
+  border-bottom: 2px solid variables.$red !important;
+}
+
+.border-bottom-2px-solid-green {
+  border-bottom: 2px solid variables.$green !important;
+}
+
+.border-bottom-2px-solid-orange {
+  border-bottom: 2px solid variables.$orange !important;
+}
+
+.border-bottom-2px-solid-blue {
+  border-bottom: 2px solid variables.$blue !important;
+}
+
+.border-bottom-2px-solid-indigo {
+  border-bottom: 2px solid variables.$indigo !important;
+}
+
+.border-bottom-2px-solid-purple {
+  border-bottom: 2px solid variables.$purple !important;
+}
+
+.border-bottom-2px-solid-pink {
+  border-bottom: 2px solid variables.$pink !important;
+}
+
+.border-bottom-2px-solid-yellow {
+  border-bottom: 2px solid variables.$yellow !important;
+}
+
+.border-bottom-2px-solid-teal {
+  border-bottom: 2px solid variables.$teal !important;
+}
+
+.border-bottom-2px-solid-cyan {
+  border-bottom: 2px solid variables.$cyan !important;
+}
+
+.border-bottom-2px-solid-sky {
+  border-bottom: 2px solid variables.$sky !important;
+}
+
+.border-bottom-2px-solid-navy {
+  border-bottom: 2px solid variables.$navy !important;
+}
+
+.border-bottom-2px-solid-berry {
+  border-bottom: 2px solid variables.$berry !important;
+}
+
+.border-bottom-2px-solid-rose {
+  border-bottom: 2px solid variables.$rose !important;
+}
+
+.border-bottom-2px-solid-orchid {
+  border-bottom: 2px solid variables.$orchid !important;
+}
+
+.border-bottom-2px-solid-blush {
+  border-bottom: 2px solid variables.$blush !important;
+}
+
+.border-bottom-2px-solid-scarlet {
+  border-bottom: 2px solid variables.$scarlet !important;
+}
+
+.border-bottom-2px-solid-carrot {
+  border-bottom: 2px solid variables.$carrot !important;
+}
+
+.border-bottom-2px-solid-cetacean-blue {
+  border-bottom: 2px solid variables.$cetacean-blue !important;
+}
+
+.border-bottom-2px-solid-denim {
+  border-bottom: 2px solid variables.$denim !important;
+}
+
+.border-bottom-2px-solid-celtic-blue {
+  border-bottom: 2px solid variables.$celtic-blue !important;
+}
+
+.border-bottom-2px-solid-button-blue {
+  border-bottom: 2px solid variables.$button-blue !important;
+}
+
+.border-bottom-2px-solid-dark-sea-green {
+  border-bottom: 2px solid variables.$dark-sea-green !important;
+}
+
+.border-bottom-2px-solid-razzmatazz {
+  border-bottom: 2px solid variables.$razzmatazz !important;
+}
+
+.border-bottom-2px-solid-deep-lilac {
+  border-bottom: 2px solid variables.$deep-lilac !important;
+}
+
+.border-bottom-3px-solid-dodger-blue {
+  border-bottom: 3px solid variables.$dodger-blue !important;
+}
+
+.border-bottom-3px-solid-button-blue {
+  border-bottom: 3px solid variables.$button-blue !important;
+}
+
+.border-bottom-3px-solid-dark-sea-green {
+  border-bottom: 3px solid variables.$dark-sea-green !important;
+}
+
+.border-bottom-3px-solid-razzmatazz {
+  border-bottom: 3px solid variables.$razzmatazz !important;
+}
+
+.border-bottom-3px-solid-deep-lilac {
+  border-bottom: 3px solid variables.$deep-lilac !important;
+}
+
+.border-bottom-3px-solid-sunshine {
+  border-bottom: 3px solid variables.$sunshine !important;
+}
+
+.border-bottom-3px-solid-red {
+  border-bottom: 3px solid variables.$red !important;
+}
+
+.border-bottom-3px-solid-green {
+  border-bottom: 3px solid variables.$green !important;
+}
+
+.border-bottom-3px-solid-orange {
+  border-bottom: 3px solid variables.$orange !important;
+}
+
+.border-bottom-3px-solid-blue {
+  border-bottom: 3px solid variables.$blue !important;
+}
+
+.border-bottom-3px-solid-indigo {
+  border-bottom: 3px solid variables.$indigo !important;
+}
+
+.border-bottom-3px-solid-purple {
+  border-bottom: 3px solid variables.$purple !important;
+}
+
+.border-bottom-3px-solid-pink {
+  border-bottom: 3px solid variables.$pink !important;
+}
+
+.border-bottom-3px-solid-yellow {
+  border-bottom: 3px solid variables.$yellow !important;
+}
+
+.border-bottom-3px-solid-teal {
+  border-bottom: 3px solid variables.$teal !important;
+}
+
+.border-bottom-3px-solid-cyan {
+  border-bottom: 3px solid variables.$cyan !important;
+}
+
+.border-bottom-3px-solid-sky {
+  border-bottom: 3px solid variables.$sky !important;
+}
+
+.border-bottom-3px-solid-navy {
+  border-bottom: 3px solid variables.$navy !important;
+}
+
+.border-bottom-3px-solid-berry {
+  border-bottom: 3px solid variables.$berry !important;
+}
+
+.border-bottom-3px-solid-rose {
+  border-bottom: 3px solid variables.$rose !important;
+}
+
+.border-bottom-3px-solid-orchid {
+  border-bottom: 3px solid variables.$orchid !important;
+}
+
+.border-bottom-3px-solid-blush {
+  border-bottom: 3px solid variables.$blush !important;
+}
+
+.border-bottom-3px-solid-scarlet {
+  border-bottom: 3px solid variables.$scarlet !important;
+}
+
+.border-bottom-3px-solid-carrot {
+  border-bottom: 3px solid variables.$carrot !important;
+}
+
+.border-bottom-3px-solid-cetacean-blue {
+  border-bottom: 3px solid variables.$cetacean-blue !important;
+}
+
+.border-bottom-3px-solid-denim {
+  border-bottom: 3px solid variables.$denim !important;
+}
+
+.border-bottom-3px-solid-celtic-blue {
+  border-bottom: 3px solid variables.$celtic-blue !important;
+}
+
+.border-bottom-3px-solid-boysenberry {
+  border-bottom: 3px solid variables.$boysenberry !important;
+}
+
+.border-bottom-3px-solid-orchid {
+  border-bottom: 3px solid variables.$orchid !important;
+}
+
+.border-bottom-70px-solid-denim {
+  border-bottom: 70px solid variables.$denim !important;
+}
+
+.border-bottom-70px-solid-dodger-blue {
+  border-bottom: 70px solid variables.$dodger-blue !important;
+}
+
+.border-bottom-70px-solid-button-blue {
+  border-bottom: 70px solid variables.$button-blue !important;
+}
+
+.border-bottom-70px-solid-dark-sea-green {
+  border-bottom: 70px solid variables.$dark-sea-green !important;
+}
+
+.border-bottom-70px-solid-razzmatazz {
+  border-bottom: 70px solid variables.$razzmatazz !important;
+}
+
+.border-bottom-70px-solid-deep-lilac {
+  border-bottom: 70px solid variables.$deep-lilac !important;
+}
+
+.border-top-3px-solid-dodger-blue {
+  border-top: 3px solid variables.$dodger-blue !important;
+}
+
+.border-top-3px-solid-sunshine {
+  border-top: 3px solid variables.$sunshine !important;
+}
+
+.border-top-3px-solid-red {
+  border-top: 3px solid variables.$red !important;
+}
+
+.border-top-3px-solid-green {
+  border-top: 3px solid variables.$green !important;
+}
+
+.border-top-3px-solid-orange {
+  border-top: 3px solid variables.$orange !important;
+}
+
+.border-top-3px-solid-blue {
+  border-top: 3px solid variables.$blue !important;
+}
+
+.border-top-3px-solid-indigo {
+  border-top: 3px solid variables.$indigo !important;
+}
+
+.border-top-3px-solid-purple {
+  border-top: 3px solid variables.$purple !important;
+}
+
+.border-top-3px-solid-pink {
+  border-top: 3px solid variables.$pink !important;
+}
+
+.border-top-3px-solid-yellow {
+  border-top: 3px solid variables.$yellow !important;
+}
+
+.border-top-3px-solid-teal {
+  border-top: 3px solid variables.$teal !important;
+}
+
+.border-top-3px-solid-cyan {
+  border-top: 3px solid variables.$cyan !important;
+}
+
+.border-top-3px-solid-sky {
+  border-top: 3px solid variables.$sky !important;
+}
+
+.border-top-3px-solid-navy {
+  border-top: 3px solid variables.$navy !important;
+}
+
+.border-top-3px-solid-berry {
+  border-top: 3px solid variables.$berry !important;
+}
+
+.border-top-3px-solid-rose {
+  border-top: 3px solid variables.$rose !important;
+}
+
+.border-top-3px-solid-orchid {
+  border-top: 3px solid variables.$orchid !important;
+}
+
+.border-top-3px-solid-blush {
+  border-top: 3px solid variables.$blush !important;
+}
+
+.border-top-3px-solid-scarlet {
+  border-top: 3px solid variables.$scarlet !important;
+}
+
+.border-top-3px-solid-carrot {
+  border-top: 3px solid variables.$carrot !important;
+}
+
+.border-top-3px-solid-cetacean-blue {
+  border-top: 3px solid variables.$cetacean-blue !important;
+}
+
+.border-top-3px-solid-denim {
+  border-top: 3px solid variables.$denim !important;
+}
+
+.border-top-3px-solid-celtic-blue {
+  border-top: 3px solid variables.$celtic-blue !important;
+}
+
+.border-top-3px-solid-button-blue {
+  border-top: 3px solid variables.$button-blue !important;
+}
+
+.border-top-3px-solid-dark-sea-green {
+  border-top: 3px solid variables.$dark-sea-green !important;
+}
+
+.border-top-3px-solid-razzmatazz {
+  border-top: 3px solid variables.$razzmatazz !important;
+}
+
+.border-top-3px-solid-deep-lilac {
+  border-top: 3px solid variables.$deep-lilac !important;
+}
+
+.border-3px-solid-button-blue {
+  border: 3px solid variables.$button-blue !important;
+}
+
+.border-3px-solid-dark-sea-green {
+  border: 3px solid variables.$dark-sea-green !important;
+}
+
+.border-3px-solid-razzmatazz {
+  border: 3px solid variables.$razzmatazz !important;
+}
+
+.border-3px-solid-deep-lilac {
+  border: 3px solid variables.$deep-lilac !important;
+}
+
+.border-3px-solid-dodger-blue {
+  border: 3px solid variables.$dodger-blue !important;
+}
+
+.border-3px-solid-celtic-blue {
+  border: 3px solid variables.$celtic-blue !important;
+}
+
+.border-3px-solid-sunshine {
+  border: 3px solid variables.$sunshine !important;
+}
+
+.border-3px-solid-red {
+  border: 3px solid variables.$red !important;
+}
+
+.border-3px-solid-green {
+  border: 3px solid variables.$green !important;
+}
+
+.border-3px-solid-orange {
+  border: 3px solid variables.$orange !important;
+}
+
+.border-3px-solid-blue {
+  border: 3px solid variables.$blue !important;
+}
+
+.border-3px-solid-indigo {
+  border: 3px solid variables.$indigo !important;
+}
+
+.border-3px-solid-purple {
+  border: 3px solid variables.$purple !important;
+}
+
+.border-3px-solid-pink {
+  border: 3px solid variables.$pink !important;
+}
+
+.border-3px-solid-yellow {
+  border: 3px solid variables.$yellow !important;
+}
+
+.border-3px-solid-teal {
+  border: 3px solid variables.$teal !important;
+}
+
+.border-3px-solid-cyan {
+  border: 3px solid variables.$cyan !important;
+}
+
+.border-3px-solid-sky {
+  border: 3px solid variables.$sky !important;
+}
+
+.border-3px-solid-navy {
+  border: 3px solid variables.$navy !important;
+}
+
+.border-3px-solid-berry {
+  border: 3px solid variables.$berry !important;
+}
+
+.border-3px-solid-rose {
+  border: 3px solid variables.$rose !important;
+}
+
+.border-3px-solid-orchid {
+  border: 3px solid variables.$orchid !important;
+}
+
+.border-3px-solid-blush {
+  border: 3px solid variables.$blush !important;
+}
+
+.border-3px-solid-scarlet {
+  border: 3px solid variables.$scarlet !important;
+}
+
+.border-3px-solid-carrot {
+  border: 3px solid variables.$carrot !important;
+}
+
+.border-3px-solid-cetacean-blue {
+  border: 3px solid variables.$cetacean-blue !important;
+}
+
+.border-3px-solid-denim {
+  border: 3px solid variables.$denim !important;
+}
+
+.border-3px-solid-boysenberry {
+  border: 3px solid variables.$boysenberry !important;
+}
+
+.border-3px-solid-orchid {
+  border: 3px solid variables.$orchid !important;
+}
+
