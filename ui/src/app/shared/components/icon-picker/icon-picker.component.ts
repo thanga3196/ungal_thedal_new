@@ -44,7 +44,6 @@ export class IconPickerComponent implements OnInit, OnChanges, ControlValueAcces
   }
 
   writeValue(value: string) {
-    console.log(value)
     this._value = value;
     // @ts-ignore
     this.selectedIcon = this.iconList.find((obj) => {

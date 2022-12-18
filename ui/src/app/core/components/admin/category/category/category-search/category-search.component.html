@@ -10,14 +10,13 @@
 <div class="container-fluid category-search bg-color-white p-0 m-0">
   <div class="row width-100per align-items-center text-center pt-5 pb-5 gap-4 background-about position-relative">
     <div class="width-100per height-100per position-absolute p-0 bg-color-black-layer"></div>
-    <h1
-      class="ps-2 color-{{theme.teritaryColor}} m-0 text-uppercase z-index-998 font-size-2_5rem pb-2 {{lang}}">{{'Category - Search' | translate: lang}}</h1>
+    <h1 class="ps-2 color-{{theme.teritaryColor}} m-0 text-uppercase z-index-998 font-size-2_5rem pb-2 {{lang}}">
+      {{'Category - Search' | translate: lang}}</h1>
     <nav style="margin-top: -18px;
     padding-left: 0.6rem !important;" aria-label="breadcrumb" class="ps-3">
       <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item text-uppercase z-index-998 color-{{theme.primaryColor}}"><a href="home"
-                                                                                               style="text-decoration: none;"
-                                                                                               class="color-{{theme.primaryColor}} font-size-1-4rem {{lang}}">Home</a>
+            style="text-decoration: none;" class="color-{{theme.primaryColor}} font-size-1-4rem {{lang}}">Home</a>
         </li>
         <li
           class="breadcrumb-item text-uppercase active z-index-998 color-{{theme.teritaryColor}} font-size-1-4rem {{lang}}"
@@ -42,8 +41,7 @@
         <div class="row">
           <div class="col-xl-6 col-lg-6 col-md-12">
             <label for="nme" class="color-black">Name</label>
-            <input type="text" id="nme" formControlName="nme" class="form-control mt-1"
-                   placeholder="Enter Name"/>
+            <input type="text" id="nme" formControlName="nme" class="form-control mt-1" placeholder="Enter Name" />
             <div *ngIf="submitted && categorySearchForm.controls['nme'].errors" class="mt-1">
               <div *ngIf="categorySearchForm.controls['nme'].errors['minlength']" class="color-red">Name
                 should be 3 or
@@ -58,7 +56,7 @@
           <div class="col-xl-6 col-lg-6 col-md-12">
             <label for="active" class="color-black">Active</label>
             <p-dropdown id="active" [options]="yesOrNoList" optionLabel="nme" optionValue="id"
-                        class="d-flex width-100per" formControlName="active" placeholder="Select Active">
+              class="d-flex width-100per" formControlName="active" placeholder="Select Active">
             </p-dropdown>
             <div *ngIf="submitted && categorySearchForm.controls['active'].errors" class="mt-1">
             </div>
@@ -82,13 +80,15 @@
   </div>
   <div class="row p-0 m-0 ps-5 pe-5 mt-3">
     <p-table [value]="categoryList" styleClass="p-datatable-gridlines" class="p-0" responsiveLayout="scroll"
-             [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
-             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-             [rowsPerPageOptions]="[10,25,50]">
+      [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
       <ng-template pTemplate="header">
         <tr>
           <th pSortableColumn="nme">Name
             <p-sortIcon field="nme"></p-sortIcon>
+          </th>
+          <th>Logo
+
           </th>
           <th>Active</th>
           <th style="width: 100px;">Action</th>
@@ -97,6 +97,7 @@
       <ng-template pTemplate="body" let-category>
         <tr>
           <td><a routerLink='/admin/category/{{category.id}}' target="_blank">{{category.nme}}</a></td>
+          <td class="p-0"><img *ngIf="category.logoPath" [src]="category.logoPath" class="width-50px height-50px"/> </td>
           <td>{{category.active ? "Yes" : "No"}}</td>
           <td style="width: 100px;cursor:pointer" class="text-center cursor-pointer">
             <fa-icon [icon]="faTrash" (click)="delete(category)"></fa-icon>

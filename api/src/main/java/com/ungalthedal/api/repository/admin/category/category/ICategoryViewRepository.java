@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository
 public interface ICategoryViewRepository extends JpaRepository<CategoryView, Long> {
-
+    CategoryView getCategoryViewById(Long id);
 }

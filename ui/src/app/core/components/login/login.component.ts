@@ -90,6 +90,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
             localStorage.setItem('refresh_token', accessTokenResponse.refreshToken)
             localStorage.setItem('user_details', JSON.stringify(accessTokenResponse))
           }
+          this.router.navigate(['home'])
         },
         error: (errorResponse: any) => {
           if (errorResponse?.error?.message) {

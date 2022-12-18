@@ -20,6 +20,12 @@ public class CategoryView {
     @Column(name = "nme")
     private String nme;
 
+    @Column(name = "logo")
+    private String logo;
+
+    @Column(name = "logo_path")
+    private String logoPath;
+
     @Column(name = "active")
     private Boolean active;
 
