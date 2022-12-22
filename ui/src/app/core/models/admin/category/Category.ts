@@ -3,6 +3,8 @@ export class Category {
   nme!: string;
   active!: boolean;
   logo!: string;
+  logoPath!: string;
+  subCategoryCount!: number;
   dateCreated: Date = new Date();
   lastUpdated: Date = new Date();
 }

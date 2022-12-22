@@ -7,8 +7,8 @@
   </div>
   <div class="container-fluid list p-2" *ngIf="showDiv">
     <div class="item" *ngFor="let icon of iconList" (click)="selectItem(icon)">
-      <img [src]=icon.path alt=""/>
+      <img [src]=icon.path alt="" />
     </div>
   </div>
 </div>
-<img *ngIf="selectedIcon" [src]="selectedIcon.path" class="mt-1"/>
+<img *ngIf="selectedIcon" [src]="selectedIcon.path" class="img mt-1 ms-1 border-1px-light-gray" />

@@ -31,4 +31,7 @@ public class SubCategory {
 
     @Column(name = "last_updated")
     private Date lastUpdated;
+
+    @Column(name = "logo")
+    private String logo;
 }

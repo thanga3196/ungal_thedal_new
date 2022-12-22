@@ -18,4 +18,10 @@ public class CategoryListView {
 
     @Column(name = "nme")
     private String nme;
+
+    @Column(name = "logo_path")
+    private String logoPath;
+
+    @Column(name = "sub_category_count")
+    private Long subCategoryCount;
 }

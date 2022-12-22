@@ -25,6 +25,9 @@
       <h6 *ngIf="showAlert" class="line-height-40px {{alert.type}}">{{alert.msg}}</h6>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-12 pe-2 text-right height-100per line-height-44px ps-5 pe-5">
+      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1">
+        &lt; Search
+      </button>
       <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="reset()">
         Add
       </button>
@@ -36,6 +39,7 @@
       </button>
     </div>
   </div>
+  <div class="row height-20px p-0 m-0"></div>
   <div class="row p-0 m-0">
     <div class="container-fluid ps-5 pe-5">
       <div [formGroup]="categoryForm">
@@ -70,7 +74,7 @@
         <div class="row mt-2">
           <div class="col-xl-6 col-lg-6 col-md-12">
             <label class="color-black">Logo<span class="color-red">*</span></label>
-            <icon-picker [id]="'icon'" [iconList]="iconList" formControlName="logo"></icon-picker>
+            <icon-picker [id]="'icon'" [iconList]="iconList" formControlName="logo" style="display: flex;"></icon-picker>
           </div>
         </div>
       </div>

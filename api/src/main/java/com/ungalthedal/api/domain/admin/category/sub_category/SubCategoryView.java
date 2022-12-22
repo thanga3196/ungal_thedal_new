@@ -20,8 +20,17 @@ public class SubCategoryView {
     @Column(name = "category_id")
     private Long categoryId;
 
+    @Column(name = "category_nme")
+    private String categoryNme;
+
     @Column(name = "nme")
     private String nme;
+
+    @Column(name = "logo")
+    private String logo;
+
+    @Column(name = "logo_path")
+    private String logoPath;
 
     @Column(name = "active")
     private Boolean active;

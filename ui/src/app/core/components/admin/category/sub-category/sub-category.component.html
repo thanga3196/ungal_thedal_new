@@ -4,42 +4,49 @@
 <div class="container-fluid sub-category bg-color-white">
   <div class="row align-items-center text-center pt-5 pb-5 gap-4 background-about position-relative">
     <div class="width-100per height-100per position-absolute p-0 bg-color-black-layer"></div>
-    <h1
-      class="ps-2 color-{{theme.teritaryColor}} m-0 text-uppercase z-index-998 font-size-2_5rem pb-2 {{lang}}">{{'About Us' | translate: lang}}</h1>
+    <h1 class="ps-2 color-{{theme.teritaryColor}} m-0 text-uppercase z-index-998 font-size-2_5rem pb-2 {{lang}}">
+      {{'Sub Category' | translate: lang}}</h1>
     <nav style="margin-top: -18px;
     padding-left: 0.6rem !important;" aria-label="breadcrumb" class="ps-3">
       <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item text-uppercase z-index-998 color-{{theme.primaryColor}}"><a href="home"
-                                                                                               style="text-decoration: none;"
-                                                                                               class="color-{{theme.primaryColor}} font-size-1-4rem {{lang}}">Home</a>
+            style="text-decoration: none;" class="color-{{theme.primaryColor}} font-size-1-4rem {{lang}}">Home</a>
         </li>
         <li
           class="breadcrumb-item text-uppercase active z-index-998 color-{{theme.teritaryColor}} font-size-1-4rem {{lang}}"
-          aria-current="page">About Us
+          aria-current="page">Sub Category
         </li>
       </ol>
     </nav>
   </div>
-  <div class="row p-0 m-0 border-1px-light-gray box-shadow-normal height-50px line-height-50px">
-    <div class="col-xl-6 col-lg-6 col-md-12 ps-2 height-100per">
+  <div class="row height-20px p-0 m-0"></div>
+  <div class="row p-0 m-0">
+    <div class="col-xl-6 col-lg-6 col-md-12 ps-2 height-100per ps-5 pe-5">
       <h6 *ngIf="showAlert" class="line-height-40px {{alert.type}}">{{alert.msg}}</h6>
     </div>
-    <div class="col-xl-6 col-lg-6 col-md-12 pe-2 text-right height-100per line-height-44px">
-      <button class="btn bg-color-theme color-white ps-5 pe-5 me-1" (click)="reset()">
+    <div class="col-xl-6 col-lg-6 col-md-12 text-right height-100per line-height-44px px-5">
+      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1">
+        &lt; Search
+      </button>
+      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="reset()">
         Add
       </button>
-      <button class="btn bg-color-theme color-white ps-5 pe-5 me-1" (click)="save()">
+      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="save()">
         Save
+      </button>
+      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="reset()">
+        Reset
       </button>
     </div>
   </div>
+  <div class="row height-20px p-0 m-0"></div>
   <div class="row p-0 m-0">
-    <div class="container-fluid border-1px-light-gray box-shadow-normal p-3">
+    <div class="container-fluid ps-5 pe-5">
       <form [formGroup]="subCategoryForm">
         <div class="row">
           <div class="col-xl-6 col-lg-6 col-md-12">
             <label for="nme" class="color-black">Name<span class="color-red">*</span></label>
-            <input type="text" id="nme" formControlName="nme" class="form-control mt-1" placeholder="Enter Name"/>
+            <input type="text" id="nme" formControlName="nme" class="form-control mt-1" placeholder="Enter Name" />
             <div *ngIf="submitted && subCategoryForm.controls['nme'].errors" class="mt-1">
               <div *ngIf="subCategoryForm.controls['nme'].errors['required']" class="color-red">Name is
                 required.
@@ -52,12 +59,10 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="row mt-2">
           <div class="col-xl-6 col-lg-6 col-md-12">
             <label for="categoryId" class="color-black">Category<span class="color-red">*</span></label>
             <p-dropdown id="categoryId" [options]="categoryList" optionLabel="nme" optionValue="id"
-                        class="d-flex width-100per" formControlName="categoryId" placeholder="Select Category">
+              class="d-flex width-100per" formControlName="categoryId" placeholder="Select Category">
             </p-dropdown>
             <div *ngIf="submitted && subCategoryForm.controls['categoryId'].errors" class="mt-1">
               <div *ngIf="subCategoryForm.controls['categoryId'].errors['required']" class="color-red">Category is
@@ -65,10 +70,16 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            <label class="color-black">Logo<span class="color-red">*</span></label>
+            <icon-picker [id]="'icon'" [iconList]="iconList" formControlName="logo" style="display: flex;"></icon-picker>
+          </div>
           <div class="col-xl-6 col-lg-6 col-md-12">
             <label for="active" class="color-black">Active<span class="color-red">*</span></label>
             <p-dropdown id="active" [options]="yesOrNoList" optionLabel="nme" optionValue="id"
-                        class="d-flex width-100per" formControlName="active" placeholder="Select Active">
+              class="d-flex width-100per" formControlName="active" placeholder="Select Active">
             </p-dropdown>
             <div *ngIf="submitted && subCategoryForm.controls['active'].errors" class="mt-1">
               <div *ngIf="subCategoryForm.controls['active'].errors['required']" class="color-red">Active is
@@ -80,4 +91,5 @@
       </form>
     </div>
   </div>
+  <div class="row p-0 m-0 height-40px"></div>
 </div>

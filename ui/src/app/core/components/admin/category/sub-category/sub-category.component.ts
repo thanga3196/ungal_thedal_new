@@ -1,17 +1,18 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {Location} from '@angular/common';
-import {ActivatedRoute} from '@angular/router';
-import {Category} from 'src/app/core/models/admin/category/Category';
-import {CommonService} from 'src/app/shared/service/common/common.service';
-import {MenuConstant} from 'src/app/core/constants/menu.constant';
-import {YesOrNoList} from 'src/app/core/models/shared/YesOrNoList';
-import {Alert} from 'src/app/core/models/shared/Alert';
-import {AlertType} from 'src/app/core/enums/alert-type';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Subscription} from 'rxjs';
-import {SubCategoryService} from 'src/app/core/services/admin/category/sub-category/sub-category.service';
-import {SubCategory} from 'src/app/core/models/admin/category/SubCategory';
-import {Theme} from "../../../../../shared/models/Theme";
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { Category } from 'src/app/core/models/admin/category/Category';
+import { CommonService } from 'src/app/shared/service/common/common.service';
+import { MenuConstant } from 'src/app/core/constants/menu.constant';
+import { YesOrNoList } from 'src/app/core/models/shared/YesOrNoList';
+import { Alert } from 'src/app/core/models/shared/Alert';
+import { AlertType } from 'src/app/core/enums/alert-type';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { SubCategoryService } from 'src/app/core/services/admin/category/sub-category/sub-category.service';
+import { SubCategory } from 'src/app/core/models/admin/category/SubCategory';
+import { Theme } from "../../../../../shared/models/Theme";
+import { Icon } from 'src/app/core/models/shared/Icon';
 
 @Component({
   selector: 'app-sub-category',
@@ -24,6 +25,7 @@ export class SubCategoryComponent implements OnInit, AfterViewInit {
   subCategoryForm!: FormGroup;
   categoryList: Category[] = [];
   yesOrNoList: YesOrNoList[] = MenuConstant.yesOrNoList;
+  iconList: Icon[] = [];
   submitted: boolean = false;
   busyLoading!: Subscription;
   busySaving!: Subscription;
@@ -35,6 +37,9 @@ export class SubCategoryComponent implements OnInit, AfterViewInit {
     this.initSubscription();
     this.commonService.getCategoryList().subscribe((data: any) => {
       this.categoryList = data as Array<Category>;
+    });
+    this.commonService.getIconList().subscribe((data: any) => {
+      this.iconList = data as Array<Icon>;
     });
     this.alert = new Alert('', AlertType.SUCCESS);
     this.initForm();
@@ -56,6 +61,7 @@ export class SubCategoryComponent implements OnInit, AfterViewInit {
         nme: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(60)]),
         categoryId: new FormControl('', [Validators.required]),
         active: new FormControl(true, [Validators.required]),
+        logo: new FormControl('', []),
       }
     );
   }
@@ -72,28 +78,29 @@ export class SubCategoryComponent implements OnInit, AfterViewInit {
       if (id == 0)
         return;
       this.busyLoading = this.subCategoryService.getById(subCategory).subscribe({
-          next: (response) => {
+        next: (response) => {
+          this.showAlert = true;
+          let subCategory: any = response;
+          if ('id' in subCategory && subCategory?.id > 0) {
+            this.showAlert = false;
+            this.subCategoryForm.get('id')?.setValue(subCategory.id);
+            this.subCategoryForm.get('nme')?.setValue(subCategory.nme);
+            this.subCategoryForm.get('categoryId')?.setValue(subCategory.categoryId);
+            this.subCategoryForm.get('active')?.setValue(subCategory.active);
+            this.subCategoryForm.get('logo')?.setValue(subCategory.logo);
+          } else {
             this.showAlert = true;
-            let subCategory: any = response;
-            if ('id' in subCategory && subCategory?.id > 0) {
-              this.showAlert = false;
-              this.subCategoryForm.get('id')?.setValue(subCategory.id);
-              this.subCategoryForm.get('nme')?.setValue(subCategory.nme);
-              this.subCategoryForm.get('categoryId')?.setValue(subCategory.categoryId);
-              this.subCategoryForm.get('active')?.setValue(subCategory.active);
-            } else {
-              this.showAlert = true;
-              this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
-            }
-            this.submitted = false;
-          },
-          error: (errorResponse) => {
-            this.showAlert = true;
-            if (errorResponse?.error?.message)
-              this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
-            else this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
+            this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
           }
+          this.submitted = false;
+        },
+        error: (errorResponse) => {
+          this.showAlert = true;
+          if (errorResponse?.error?.message)
+            this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
+          else this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
         }
+      }
       );
     });
   }

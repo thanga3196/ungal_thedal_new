@@ -84,10 +84,10 @@
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="nme">Name
+          <th style="width: 35%" pSortableColumn="nme">Name
             <p-sortIcon field="nme"></p-sortIcon>
           </th>
-          <th>Logo
+          <th>Icon
 
           </th>
           <th>Active</th>
@@ -97,7 +97,8 @@
       <ng-template pTemplate="body" let-category>
         <tr>
           <td><a routerLink='/admin/category/{{category.id}}' target="_blank">{{category.nme}}</a></td>
-          <td class="p-0"><img *ngIf="category.logoPath" [src]="category.logoPath" class="width-50px height-50px"/> </td>
+          <td class="p-0"><img *ngIf="category.logoPath" [src]="category.logoPath"
+              class="ms-2 width-50px height-50px" /> </td>
           <td>{{category.active ? "Yes" : "No"}}</td>
           <td style="width: 100px;cursor:pointer" class="text-center cursor-pointer">
             <fa-icon [icon]="faTrash" (click)="delete(category)"></fa-icon>
