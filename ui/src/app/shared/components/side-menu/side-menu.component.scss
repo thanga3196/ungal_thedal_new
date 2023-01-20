@@ -111,3 +111,13 @@
   border: 2px solid variables.$dark-gun-metal;
   width: 100%;
 }
+
+.follow-us {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+}
+
+.follow-us > li > fa-icon {
+  font-size: 1.2rem;
+}

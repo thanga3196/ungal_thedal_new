@@ -270,6 +270,14 @@ export class MenuConstant {
           children: [],
         }
       ]
+    },
+    {
+      name: "Notification",
+      routerLink: undefined,
+      clicked: false,
+      children: [
+
+      ]
     }
   ];
 }
