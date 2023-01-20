@@ -1,5 +1,5 @@
 <div class="header">
-  <section class="header-top container-fluid ps-3 pe-3 d-flex bg-color-black">
+  <section class="header-top container-fluid ps-3 pe-3 d-flex bg-color-black non-mandatory">
     <div class="row">
       <div
         class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 header-top-left d-flex justify-content-start align-items-center ps-3 pe-0 m-0">
@@ -38,7 +38,7 @@
               </ul>
             </div>
           </li>
-          <li class="justify-content-center">
+          <li class="non-mandatory justify-content-center">
             <fa-icon [icon]="['fas', 'bell']" class="color-white"></fa-icon>
             <sup
               *ngIf="messageNonReadCount > 0">{{messageNonReadCount > 99 ? 99 + '' : messageNonReadCount}}</sup>
