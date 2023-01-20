@@ -1,11 +1,11 @@
 import {Injectable} from "@angular/core";
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import {catchError, Observable, tap, throwError} from "rxjs";
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private router: Router) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
 
   }
 
@@ -25,7 +25,7 @@ export class AuthInterceptor implements HttpInterceptor {
       if (err.status === 401) {
         this.router.navigate(['login'], {
           queryParams: {
-            requestUrl: req.url
+            requestUrl: this.router.routerState.snapshot.url
           }
         })
       }

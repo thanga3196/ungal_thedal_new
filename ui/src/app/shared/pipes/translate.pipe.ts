@@ -1,7 +1,7 @@
 import {Inject, Pipe, PipeTransform} from '@angular/core';
-import {HttpService} from "../service/http/http.service";
-import en from "../../../assets/i18n/en.json";
-import ta from "../../../assets/i18n/ta.json";
+import {HttpService} from "src/app/shared/services/http/http.service";
+import en from "src/assets/i18n/en.json";
+import ta from "src/assets/i18n/ta.json";
 
 @Pipe({
   name: 'translate',

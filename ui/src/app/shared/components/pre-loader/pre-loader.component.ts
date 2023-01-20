@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {CommonService} from 'src/app/shared/service/common/common.service';
-import {Theme} from "../../models/Theme";
+import {CommonService} from 'src/app/shared/services/common/common.service';
+import {Theme} from "src/app/shared/models/Theme";
 
 @Component({
   selector: 'pre-loader',

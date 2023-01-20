@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {faCoffee} from '@fortawesome/free-solid-svg-icons';
-import {CommonService} from './shared/service/common/common.service';
+import {CommonService} from './shared/services/common/common.service';
 
 @Component({
   selector: 'app-root',

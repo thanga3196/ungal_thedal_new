@@ -35,6 +35,9 @@ public class UserView {
     @Column(name = "mobile")
     private String mobile;
 
+    @Column(name = "img_path")
+    private String imgPath;
+
     @Column(name = "password")
     private String password;
 

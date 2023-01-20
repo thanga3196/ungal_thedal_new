@@ -14,6 +14,7 @@ public class CustomUserDetails implements UserDetails {
     private String displayNme;
     private String email;
     private String mobile;
+    private String imgPath;
     @JsonIgnore
     private String password;
     private boolean accountExpired = false;
@@ -22,12 +23,13 @@ public class CustomUserDetails implements UserDetails {
     private boolean accountEnabled;
     private List<CustomRole> roles;
 
-    public CustomUserDetails(String firstNme, String lastNme, String displayNme, String email, String mobile, String password, boolean accountExpired, boolean accountLocked, boolean passwordExpired, boolean accountEnabled, List<CustomRole> roles) {
+    public CustomUserDetails(String firstNme, String lastNme, String displayNme, String email, String mobile, String imgPath, String password, boolean accountExpired, boolean accountLocked, boolean passwordExpired, boolean accountEnabled, List<CustomRole> roles) {
         this.firstNme = firstNme;
         this.lastNme = lastNme;
         this.displayNme = displayNme;
         this.email = email;
         this.mobile = mobile;
+        this.imgPath = imgPath;
         this.password = password;
         this.accountExpired = accountExpired;
         this.accountLocked = accountLocked;
@@ -37,7 +39,7 @@ public class CustomUserDetails implements UserDetails {
     }
 
     public static CustomUserDetails copy(UserView userView) {
-        return new CustomUserDetails(userView.getFirstNme(), userView.getLastNme(), userView.getDisplayNme(), userView.getEmail(), userView.getMobile(), userView.getPassword(), false, userView.isAccountLocked(), userView.isPasswordExpired(), userView.isAccountEnabled(), List.of());
+        return new CustomUserDetails(userView.getFirstNme(), userView.getLastNme(), userView.getDisplayNme(), userView.getEmail(), userView.getMobile(), userView.getImgPath(), userView.getPassword(), false, userView.isAccountLocked(), userView.isPasswordExpired(), userView.isAccountEnabled(), List.of());
     }
 
     @Override
@@ -93,6 +95,10 @@ public class CustomUserDetails implements UserDetails {
 
     public String getMobile() {
         return mobile;
+    }
+
+    public String getImgPath() {
+        return imgPath;
     }
 
     public boolean isAccountExpired() {

@@ -24,7 +24,7 @@ public class CustomUserDetailsService implements ICustomUserDetailsService {
 
     @Override
     public CustomUserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new CustomUserDetails("Thangavel", "Ayyasamy", "Thangavel Ayyasamy", "indianthanga@gmail.com", "+919042079408", "", false, false, false, true, List.of());
+        return new CustomUserDetails("Thangavel", "Ayyasamy", "Thangavel Ayyasamy", "indianthanga@gmail.com", "+919042079408", "","", false, false, false, true, List.of());
     }
 
     public CustomUserDetails getCustomerUserDetailsFromUserName(String userName) {

@@ -1,9 +1,9 @@
-import {Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, HostListener, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {IconDefinition} from '@fortawesome/free-regular-svg-icons';
 import {faXmark} from '@fortawesome/free-solid-svg-icons';
-import {AutoComplete} from 'src/app/core/models/shared/AutoComplete';
-import {CommonService} from "../../service/common/common.service";
-import {Theme} from "../../models/Theme";
+import {AutoComplete} from 'src/app/shared/models/AutoComplete';
+import {CommonService} from "src/app/shared/services/common/common.service";
+import {Theme} from "src/app/shared/models/Theme";
 
 @Component({
   selector: 'auto-complete',
@@ -58,6 +58,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
           return it[this.value].toLowerCase().indexOf(event.target.value.toLowerCase()) > -1;
         }));
     }
+    else this.updateSuggestionBox(this.items)
   }
 
   updateSuggestionBox(items: any[]) {

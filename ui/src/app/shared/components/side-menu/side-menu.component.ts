@@ -8,7 +8,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import {CommonService} from 'src/app/shared/service/common/common.service';
+import {CommonService} from 'src/app/shared/services/common/common.service';
 
 @Component({
   selector: 'side-menu',

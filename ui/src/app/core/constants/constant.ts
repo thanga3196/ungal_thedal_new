@@ -1,4 +1,4 @@
-import {Theme} from "../../shared/models/Theme";
+import {Theme} from "src/app/shared/models/Theme";
 
 export class Constant {
   public static defaultTheme: Theme = {

@@ -5,18 +5,17 @@ import {
   faAngleRight,
   faBars,
   faBell,
-  faBlog,
   faLanguage,
-  faMagnifyingGlass,
   faPalette,
   faRightFromBracket,
   IconDefinition
 } from '@fortawesome/free-solid-svg-icons';
 import {MenuConstant} from 'src/app/core/constants/menu.constant';
-import {CommonService} from 'src/app/shared/service/common/common.service';
-import {AuthService} from "../../../core/services/auth/auth.service";
+import {CommonService} from 'src/app/shared/services/common/common.service';
+import {AuthService} from "src/app/core/services/auth/auth.service";
 import {Router} from "@angular/router";
-import {Theme} from "../../models/Theme";
+import {Theme} from "src/app/shared/models/Theme";
+import {UserDetails} from "src/app/core/models/user/UserDetails";
 
 @Component({
   selector: 'header',
@@ -32,8 +31,6 @@ export class HeaderComponent implements OnInit {
   faPalette: IconDefinition = faPalette;
   faBars: IconDefinition = faBars;
   faRightFromBracket: IconDefinition = faRightFromBracket;
-  faMagnifyingGlass: IconDefinition = faMagnifyingGlass;
-  faBlog: IconDefinition = faBlog;
   menuList: any[] = MenuConstant.menuList;
   profileMenuList: any[] = MenuConstant.profileMenuList;
   adminMenuList: any[] = MenuConstant.adminMenuList;
@@ -47,6 +44,7 @@ export class HeaderComponent implements OnInit {
   showPalette: boolean = false;
   showLang: boolean = false;
   showService: boolean = true;
+  userDetails!: UserDetails;
   @ViewChild('servicesList') servicesList: ElementRef | undefined;
 
   constructor(private commonService: CommonService, private authService: AuthService, private router: Router, private elementRef: ElementRef) {
@@ -61,15 +59,15 @@ export class HeaderComponent implements OnInit {
   handleOutsideClick(event: any) {
     if (event.target.className && typeof event.target.className.includes !== 'undefined' && !event.target.className.includes('profile-link'))
       this.showProfile = false;
-    if (event.target.className && typeof event.target.className.includes!=='undefined'  && !event.target.className.includes('bar-link'))
+    if (event.target.className && typeof event.target.className.includes !== 'undefined' && !event.target.className.includes('bar-link'))
       this.commonService.setShowMenu(false);
-    if (event.target.className && typeof event.target.className.includes!=='undefined'  && !event.target.className.includes('admin-link'))
+    if (event.target.className && typeof event.target.className.includes !== 'undefined' && !event.target.className.includes('admin-link'))
       this.showAdministration = false;
-    if (event.target.className && typeof event.target.className.includes!=='undefined'  && !event.target.className.includes('palette-link'))
+    if (event.target.className && typeof event.target.className.includes !== 'undefined' && !event.target.className.includes('palette-link'))
       this.showPalette = false;
-    if (event.target.className && typeof event.target.className.includes!=='undefined'  && !event.target.className.includes('lang-link'))
+    if (event.target.className && typeof event.target.className.includes !== 'undefined' && !event.target.className.includes('lang-link'))
       this.showLang = false;
-    if (event.target.className && typeof event.target.className.includes!=='undefined'  && !event.target.className.includes('service-link')) {
+    if (event.target.className && typeof event.target.className.includes !== 'undefined' && !event.target.className.includes('service-link')) {
       this.menuList.find((obj) => {
         return obj.name === 'Services'
       }).clicked = false
@@ -96,6 +94,7 @@ export class HeaderComponent implements OnInit {
     this.commonService.getLang().subscribe(value => {
       this.lang = value;
     });
+    this.userDetails = this.authService.getUserDetails() as UserDetails
   }
 
   ngOnInit(): void {

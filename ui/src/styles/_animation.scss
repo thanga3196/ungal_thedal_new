@@ -1,0 +1,59 @@
+@-webkit-keyframes ring {
+  0% {
+    transform: rotate(-15deg)
+  }
+  2% {
+    transform: rotate(15deg)
+  }
+  12%, 4% {
+    transform: rotate(-18deg)
+  }
+  14%, 6% {
+    transform: rotate(18deg)
+  }
+  8% {
+    transform: rotate(-22deg)
+  }
+  10% {
+    transform: rotate(22deg)
+  }
+  16% {
+    transform: rotate(-12deg)
+  }
+  18% {
+    transform: rotate(12deg)
+  }
+  100%, 20% {
+    transform: rotate(0)
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(-15deg)
+  }
+  2% {
+    transform: rotate(15deg)
+  }
+  12%, 4% {
+    transform: rotate(-18deg)
+  }
+  14%, 6% {
+    transform: rotate(18deg)
+  }
+  8% {
+    transform: rotate(-22deg)
+  }
+  10% {
+    transform: rotate(22deg)
+  }
+  16% {
+    transform: rotate(-12deg)
+  }
+  18% {
+    transform: rotate(12deg)
+  }
+  100%, 20% {
+    transform: rotate(0)
+  }
+}

@@ -7,8 +7,12 @@ import {AutoCompleteComponent} from "./components/auto-complete/auto-complete.co
 import {PreLoaderComponent} from "./components/pre-loader/pre-loader.component";
 import {IconPickerComponent} from "./components/icon-picker/icon-picker.component";
 import {CommonModule} from "@angular/common";
-import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {FontAwesomeModule, FaIconLibrary} from "@fortawesome/angular-fontawesome";
 import {RouterModule} from "@angular/router";
+import {ReactiveFormsModule} from "@angular/forms";
+import {fas} from '@fortawesome/free-solid-svg-icons';
+import {far} from "@fortawesome/free-regular-svg-icons";
+import {fab} from "@fortawesome/free-brands-svg-icons";
 
 @NgModule({
   declarations: [
@@ -19,7 +23,7 @@ import {RouterModule} from "@angular/router";
     AutoCompleteComponent,
     SideMenuComponent,
     PreLoaderComponent,
-    IconPickerComponent
+    IconPickerComponent,
   ],
   exports: [TranslatePipe,
     HeaderComponent,
@@ -27,13 +31,18 @@ import {RouterModule} from "@angular/router";
     AutoCompleteComponent,
     SideMenuComponent,
     PreLoaderComponent,
-    IconPickerComponent
+    IconPickerComponent,
+    FontAwesomeModule
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
     RouterModule,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {
+  constructor(faIconLibrary: FaIconLibrary) {
+    faIconLibrary.addIconPacks(fas, far, fab)
+  }
 }

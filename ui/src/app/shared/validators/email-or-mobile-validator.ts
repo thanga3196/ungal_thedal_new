@@ -1,5 +1,5 @@
 import {FormGroup} from '@angular/forms';
-import {Country} from "../../core/models/admin/location/Country";
+import {Country} from "src/app/admin/location/models/Country";
 
 export function emailOrMobileValidator(email: string, mobile: string, country: string, isEmail: string, countryList: string): any | null {
   return (formGroup: FormGroup) => {

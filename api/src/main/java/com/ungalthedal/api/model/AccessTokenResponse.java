@@ -17,6 +17,7 @@ public class AccessTokenResponse {
     private String displayNme;
     private String mobile;
     private String email;
+    private String imgPath;
     private List<CustomRole> roleList;
     private String accessToken;
     private String refreshToken;
@@ -27,6 +28,7 @@ public class AccessTokenResponse {
         this.displayNme = customUserDetails.getDisplayNme();
         this.mobile = customUserDetails.getMobile();
         this.email = customUserDetails.getEmail();
+        this.imgPath = customUserDetails.getImgPath();
         this.accessToken = accessToken;
         this.refreshToken = refreshToken;
         this.roleList = customUserDetails.getRoles();

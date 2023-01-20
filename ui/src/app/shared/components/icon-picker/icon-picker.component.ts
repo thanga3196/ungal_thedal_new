@@ -1,5 +1,5 @@
 import {Component, HostListener, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {Icon} from "../../../core/models/shared/Icon";
+import {Icon} from "src/app/shared/models/Icon";
 import {
   AbstractControl,
   ControlValueAccessor,

@@ -1,0 +1,177 @@
+@use "src/styles/variables";
+
+.carousel {
+  min-height: 600px !important;
+  height: auto !important;
+  display: flex;
+  flex: 1 0 100%;
+  position: relative;
+}
+
+.carousel-left, .carousel-right {
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  z-index: 998;
+}
+
+.carousel-left, .carousel-right {
+  position: absolute;
+  cursor: pointer;
+}
+
+.carousel-left {
+  left: 0;
+  height: 100%;
+}
+
+.carousel-right {
+  right: 0;
+  height: 100%;
+}
+
+.carousel-left fa-icon, .carousel-right fa-icon {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: variables.$white;
+  padding: 2px 7px 2px 7px;
+}
+
+.carousel-list {
+  width: 100%;
+  height: 600px;
+}
+
+.carousel-item {
+  height: 100%;
+  margin: 0;
+  display: none;
+}
+
+.carousel-item img {
+  width: 100%;
+}
+
+.carousel-item-visible {
+  display: flex;
+  animation: fadeVisibility 2s;
+}
+
+.carousel-dot {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  z-index: 998;
+  bottom: 0;
+}
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-image: url('~src/assets/images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner .background {
+  height: 100%;
+  background-color: variables.$black;
+  z-index: 997;
+  opacity: 0.5;
+}
+
+.banner .main {
+  z-index: 998;
+}
+
+.banner-title {
+  margin-top: 1em;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.banner-title h6 {
+  font-weight: 800;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 58px;
+}
+
+.banner-search {
+  background: #ffffff;
+  margin-top: 5em !important;
+  padding: 10px 20px 5px;
+  box-shadow: 0px 0px 0px 7px rgb(255 255 255 / 20%);
+  -webkit-box-shadow: 0px 0px 0px 7px rgb(255 255 255 / 20%);
+  overflow: inherit;
+}
+
+.banner-search .row {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.banner-search-input,
+.banner-search-select {
+  position: relative;
+  width: 100%;
+  height: 67px;
+}
+
+.banner-search-input fa-icon,
+.banner-search-select fa-icon {
+  position: absolute;
+  top: 35%;
+  left: 15px;
+  color: variables.$dodger-blue;
+}
+
+.banner-search-input input {
+  width: 100%;
+  height: 60px;
+  margin-top: 3.5px;
+  padding-left: 40px;
+  outline: 0;
+  border: 0;
+  font-size: 1.3rem;
+}
+
+.banner-search-button {
+  margin: 0.25rem;
+  margin-top: 0px !important;
+}
+
+.banner-search-button input {
+  width: 100%;
+  height: 60px;
+  margin-top: 3.5px;
+  outline: 0;
+  border: 0;
+  font-size: 1.3rem;
+}
+
+input[type=text] {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 40px;
+  font-size: 20px;
+}
+
+fa-icon {
+  font-size: 16px;
+}

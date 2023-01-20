@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {faFacebookF, faInstagram, faTwitter, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import {MenuConstant} from 'src/app/core/constants/menu.constant';
-import {ServerStatus} from 'src/app/core/models/shared/ServerStatus';
-import {CommonService} from 'src/app/shared/service/common/common.service';
-import {Theme} from "../../models/Theme";
+import {ServerStatus} from 'src/app/shared/models/ServerStatus';
+import {CommonService} from 'src/app/shared/services/common/common.service';
+import {Theme} from "src/app/shared/models/Theme";
 
 @Component({
   selector: 'footer',

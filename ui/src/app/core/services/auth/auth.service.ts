@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpService} from "../../../shared/service/http/http.service";
-import {UrlConstant} from "../../constants/url.constant";
-import {LoginRequest} from "../../models/auth/LoginRequest";
-import {RegisterRequest} from "../../models/auth/RegisterRequest";
-import {AccessTokenResponse} from "../../models/auth/AccessTokenResponse";
+import {HttpService} from "src/app/shared/services/http/http.service";
+import {UrlConstant} from "src/app/core/constants/url.constant";
+import {LoginRequest} from "src/app/core/models/auth/LoginRequest";
+import {RegisterRequest} from "src/app/core/models/auth/RegisterRequest";
 
 @Injectable({
   providedIn: 'root'
@@ -28,11 +27,16 @@ export class AuthService {
   }
 
   public isLoggedIn() {
-    const token = localStorage.getItem("access_token")
-    return !!token;
+    return !!localStorage.getItem("access_token")
   }
 
   isLoggedOut() {
     return !this.isLoggedIn();
+  }
+
+  getUserDetails() {
+    let json: any;
+    json = JSON.parse(localStorage.getItem("user_details") || '{}')
+    return json
   }
 }

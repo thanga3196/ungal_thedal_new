@@ -1,7 +1,4 @@
-import {
-  faUser
-} from "@fortawesome/free-solid-svg-icons";
-import {Icon} from "../models/shared/Icon";
+import {faUser} from "@fortawesome/free-solid-svg-icons";
 import {Constant} from "./constant";
 
 export class MenuConstant {

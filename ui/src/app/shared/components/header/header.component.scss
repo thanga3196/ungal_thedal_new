@@ -1,5 +1,6 @@
 @use "src/styles/variables";
 @import "src/styles/bg-color";
+@import "src/styles/animation";
 
 .header {
   height: 70px;
@@ -18,7 +19,8 @@
   flex: 1 1 100%;
 }
 
-.header-top-left, .header-top-right {
+.header-top-left,
+.header-top-right {
   flex: 1 1 50%;
 }
 
@@ -34,7 +36,7 @@
   line-height: 42px;
 }
 
-.header-top-right ul > li {
+.header-top-right ul>li {
   padding: 0 10px 0 10px !important;
   text-align: center;
   height: 100%;
@@ -43,12 +45,12 @@
   justify-items: center;
 }
 
-.header-top-right ul > li:hover {
+.header-top-right ul>li:hover {
   cursor: pointer;
 }
 
-.header-top-right ul > li fa-icon {
-  font-size: 1rem;
+.header-top-right ul>li fa-icon {
+  font-size: 1.1rem;
 }
 
 .header-top-right-dropdown {
@@ -66,15 +68,28 @@
 
 .palette {
   font-size: 14px;
-  width: 180px;
+  width: 220px;
+}
+
+.palette ul {
+  padding: 10px !important;
+}
+
+.palette ul > li {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 
 .language {
   font-size: 14px;
-  width: 100px;
+  width: 140px;
 }
 
-.language ul > li {
+.language ul {
+  padding: 10px !important;
+}
+
+.language ul>li {
   padding-left: 0 !important;
 }
 
@@ -85,29 +100,30 @@
   overflow-y: hidden;
 }
 
-.header-top-right-dropdown ul > li {
+.header-top-right-dropdown ul>li {
   width: 100%;
-  height: 32px;
+  height: 40px;
   color: variables.$black;
   display: inline-flex;
   text-align: left;
   align-items: center;
 }
 
-.header-top-right-dropdown ul > li > div {
+.header-top-right-dropdown ul>li>div {
   width: 20px;
   height: 20px;
   border-radius: 25px;
 }
 
-.header-top-right-dropdown ul > li > span {
+.header-top-right-dropdown ul>li>span {
   height: 30px;
   line-height: 30px;
   padding-left: 20px !important;
   font-weight: 500;
+  font-size: 1rem;
 }
 
-.header-top-right ul > li:hover div {
+.header-top-right ul>li:hover div {
   //display: flex;
 }
 
@@ -127,7 +143,8 @@
   height: 70px;
 }
 
-.header-brand h5, .header-brand h3 {
+.header-brand h5,
+.header-brand h3 {
   margin-bottom: 0;
 }
 
@@ -382,13 +399,14 @@
   width: 100%;
 }
 
-.sub-menu li:hover > a {
+.sub-menu li:hover>a {
   color: variables.$dodger-blue;
   padding-left: 4px;
   transition: 0.2s ease-in;
 }
 
-.header-menu-right fa-icon, .header-menu-right button {
+.header-menu-right fa-icon,
+.header-menu-right button {
   font-size: 20px;
   color: variables.$black;
   padding: 0px 10px 0px 10px;
@@ -442,8 +460,8 @@
 }
 
 .profile img {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   margin-right: 10px;
   border-radius: 25px;
 }
@@ -496,7 +514,12 @@
   top: 0px;
 }
 
-.profile-link, .bar-link, .admin-link, .palette-link, .lang-link, .service-link {
+.profile-link,
+.bar-link,
+.admin-link,
+.palette-link,
+.lang-link,
+.service-link {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -504,7 +527,8 @@
   left: 0;
 }
 
-.admin-link, .service-link {
+.admin-link,
+.service-link {
   top: 0;
 }
 
@@ -520,11 +544,12 @@
   border-bottom: 1px solid variables.$bright-gray;
 }
 
-.profile-menu ul > li {
+.profile-menu ul>li {
   height: 40px;
 }
 
-.profile-menu-list li:first-child, .admin-list ul li a ul li:first-child {
+.profile-menu-list li:first-child,
+.admin-list ul li a ul li:first-child {
   border-top: 1px solid variables.$bright-gray;
 }
 
@@ -532,15 +557,17 @@
   border-top: 0px solid variables.$bright-gray;
 }
 
-.profile-menu-list li, .admin-list li {
+.profile-menu-list li,
+.admin-list li {
   border-top: 1px solid variables.$bright-gray;
 }
 
-.profile-menu-list li:last-child, .admin-list ul + li:last-child {
+.profile-menu-list li:last-child,
+.admin-list ul+li:last-child {
   border-bottom: 1px solid variables.$bright-gray;
 }
 
-.profile-menu ul > li {
+.profile-menu ul>li {
   padding: 0px 10px 0px 10px;
   width: 100%;
   height: 40px;
@@ -548,7 +575,7 @@
   align-items: center;
 }
 
-.profile-menu ul > li > span {
+.profile-menu ul>li>span {
   width: 100%;
   text-align: left;
 }
@@ -643,4 +670,24 @@
 .header-top-right-dropdown ul::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+}
+
+.header-top-left-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  display: inline-flex;
+}
+
+.header-top-left-list li {
+  height: 100%;
+  line-height: 30px;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+
+.ring {
+  -webkit-animation: 2s infinite ease-in;
+  animation: 2s infinite ease-in;
 }
