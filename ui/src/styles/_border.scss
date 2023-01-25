@@ -8,6 +8,26 @@
   border: 1px solid variables.$light-gray;
 }
 
+.border-1px-denim {
+  border: 1px solid variables.$denim !important;
+}
+
+.border-1px-dodger-blue {
+  border: 1px solid variables.$dodger-blue !important;
+}
+
+.border-1px-dark-sea-green {
+  border: 1px solid variables.$dark-sea-green !important;
+}
+
+.border-1px-razzmatazz {
+  border: 1px solid variables.$razzmatazz !important;
+}
+
+.border-1px-deep-lilac {
+  border: 1px solid variables.$deep-lilac !important;
+}
+
 .border-bottom-2px-solid-dodger-blue {
   border-bottom: 2px solid variables.$dodger-blue !important;
 }

@@ -13,11 +13,8 @@
               <h6 class="{{lang}} d-inline-flex">{{'Discover Anything, Anywhere' | translate: lang }}.
               </h6>
               <br/>
-              <h2 class="color-white mt-3">Find great places to <span class="color-{{theme.primaryColor}} ">stay</span>,
-                <span class="color-{{theme.primaryColor}} ">eat</span>, <span
-                  class="color-{{theme.primaryColor}} ">shop</span>, <span
-                  class="color-{{theme.primaryColor}} ">buy</span>, <span
-                  class="color-{{theme.primaryColor}} ">visit</span> and many more.</h2>
+              <h2 class="color-white mt-3 en">Find great places to stay,
+                eat, shop, buy, visit and many more.</h2>
             </div>
             <div class="banner-search container-fluid m-0 p-0">
               <div class="row">
@@ -86,7 +83,7 @@
       </div>
     </div>
     <div class="row mb-5">
-      <div *ngFor="let category of filteredCategory" class="col-sm-12 col-md-6 col-lg-3">
+      <div *ngFor="let category of filteredCategory" class="col-sm-12 col-md-4 col-lg-4">
         <div class="bg-white text-center rounded-xl shadow-sm p-4">
           <div class="py-4 mt-2">
             <img [src]="category.logoPath" alt="icon"/>

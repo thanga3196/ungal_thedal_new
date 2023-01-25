@@ -12,7 +12,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-color: variables.$white;
-  zoom: 95%;
 }
 
 body::-webkit-scrollbar {
@@ -129,34 +128,4 @@ label {
 
 .object-fit-fill {
   object-fit: fill !important;
-}
-
-@media all and (max-width: 576px) {
-  .height {
-    height: 72px !important;
-  }
-}
-
-@media all and (min-width: 576px) {
-  .height {
-    height: 72px !important;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .height {
-    height: 72px !important;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .height {
-    height: 112px !important;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .height {
-    height: 112px !important;
-  }
 }

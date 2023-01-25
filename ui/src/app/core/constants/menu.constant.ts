@@ -201,12 +201,12 @@ export class MenuConstant {
           children: []
         },
         {
-          name: 'Button Blue',
+          name: 'Dodger Blue',
           routerLink: undefined,
           clicked: false,
           children: [],
           theme: {
-            primaryColor: "button-blue",
+            primaryColor: "dodger-blue",
             secondaryColor: "black",
             teritaryColor: "white",
             primaryBackgroundColor: "cultured"

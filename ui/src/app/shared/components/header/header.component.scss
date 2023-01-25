@@ -1,5 +1,7 @@
 @use "src/styles/variables";
 @import "src/styles/bg-color";
+@import "src/styles/colors";
+@import "src/styles/border";
 @import "src/styles/animation";
 
 .header {
@@ -36,7 +38,7 @@
   line-height: 42px;
 }
 
-.header-top-right ul>li {
+.header-top-right ul > li {
   padding: 0 10px 0 10px !important;
   text-align: center;
   height: 100%;
@@ -45,11 +47,11 @@
   justify-items: center;
 }
 
-.header-top-right ul>li:hover {
+.header-top-right ul > li:hover {
   cursor: pointer;
 }
 
-.header-top-right ul>li fa-icon {
+.header-top-right ul > li fa-icon {
   font-size: 1.1rem;
 }
 
@@ -57,65 +59,40 @@
   position: absolute;
   display: flex;
   overflow-y: auto;
-  top: 42px;
+  top: 70px;
   right: 0;
   z-index: 1001;
   border: 1px solid variables.$bright-gray;
   background-color: variables.$white;
-  box-shadow: 0 12px 30px -2px rgb(0 0 0 / 40%);
+  width: 230px;
   transition: all .2s ease-in-out;
 }
 
-.palette {
-  font-size: 14px;
-  width: 220px;
-}
-
-.palette ul {
-  padding: 10px !important;
-}
-
-.palette ul > li {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
-}
-
-.language {
-  font-size: 14px;
-  width: 140px;
-}
-
-.language ul {
-  padding: 10px !important;
-}
-
-.language ul>li {
-  padding-left: 0 !important;
-}
-
 .header-top-right-dropdown ul {
-  padding: 0;
+  padding-left: 0;
   flex-direction: column;
   width: 100%;
   overflow-y: hidden;
 }
 
-.header-top-right-dropdown ul>li {
+.header-top-right-dropdown ul > li {
   width: 100%;
   height: 40px;
   color: variables.$black;
   display: inline-flex;
   text-align: left;
   align-items: center;
+  cursor: pointer;
 }
 
-.header-top-right-dropdown ul>li>div {
+.header-top-right-dropdown ul > li > div {
   width: 20px;
   height: 20px;
   border-radius: 25px;
+  margin-left: 1rem;
 }
 
-.header-top-right-dropdown ul>li>span {
+.header-top-right-dropdown ul > li > span {
   height: 30px;
   line-height: 30px;
   padding-left: 20px !important;
@@ -123,38 +100,27 @@
   font-size: 1rem;
 }
 
-.header-top-right ul>li:hover div {
-  //display: flex;
-}
-
 .dark-header {
   background: variables.$yankees-blue;
 }
 
-.header-menu-left:first-child {
-  border-left: 1px solid variables.$bright-gray;
-}
-
-.header-menu-left li {
-  border-right: 1px solid variables.$bright-gray;
-}
-
 .header-brand {
   height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.header-brand h5,
-.header-brand h3 {
+.header-brand h2 {
   margin-bottom: 0;
-}
-
-.header-brand h3 {
-  align-items: baseline
+  align-items: baseline;
 }
 
 .header-menu-wrapper {
   width: 100%;
   height: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .header-menu-left {
@@ -163,7 +129,7 @@
   margin: 0;
   padding-left: 15px;
   display: inline-flex;
-  float: right;
+  float: left;
 }
 
 .header-menu-left-dropdown {
@@ -266,7 +232,7 @@
 .header-menu-left-dropdown .slider .list .list-item img {
   width: 40px;
   height: 40px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   transition: margin-bottom 0.5s;
 }
 
@@ -288,24 +254,16 @@
   display: inline-flex;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  //position: inherit !important;
-  //height: 70px;
-}
-
-.header-menu-left li:hover .header-menu-left-dropdown {
-  //display: block;
 }
 
 .header-menu-left li a {
   text-decoration: none;
   color: variables.$black;
-  padding: 0px 20px 0px 20px;
-  //height: 70px;
+  padding: 0 15px 0 15px;
   line-height: 70px;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 500;
   display: block;
-  text-transform: uppercase;
 }
 
 .header-menu-right {
@@ -313,13 +271,16 @@
   height: 100%;
   margin: 0;
   padding-left: 15px;
-  display: inline-block;
   float: right;
+  display: flex;
+  align-items: center;
 }
 
 .header-menu-right li {
   display: inline-flex;
   position: relative !important;
+  height: 70px;
+  align-items: center;
 }
 
 .sub-menu li:hover .side-menu {
@@ -343,11 +304,6 @@
   color: variables.$white !important;
 }
 
-.bar {
-  position: relative;
-  top: 2.5px;
-}
-
 .notification {
   position: absolute;
   top: 5px;
@@ -362,8 +318,8 @@
   width: 180px;
   padding: 0;
   background: variables.$white;
-  box-shadow: 0px 0px 50px 0px rgb(32 32 32 / 15%);
-  -webkit-box-shadow: 0px 0px 50px 0px rgb(32 32 32 / 15%);
+  box-shadow: 0 0 50px 0 rgb(32 32 32 / 15%);
+  -webkit-box-shadow: 0 0 50px 0 rgb(32 32 32 / 15%);
   display: none;
 }
 
@@ -376,8 +332,8 @@
   padding: 0;
   top: 0;
   background: variables.$white;
-  box-shadow: 0px 0px 50px 0px rgb(32 32 32 / 15%);
-  -webkit-box-shadow: 0px 0px 50px 0px rgb(32 32 32 / 15%);
+  box-shadow: 0 0 50px 0 rgb(32 32 32 / 15%);
+  -webkit-box-shadow: 0 0 50px 0 rgb(32 32 32 / 15%);
   display: none;
 }
 
@@ -399,7 +355,7 @@
   width: 100%;
 }
 
-.sub-menu li:hover>a {
+.sub-menu li:hover > a {
   color: variables.$dodger-blue;
   padding-left: 4px;
   transition: 0.2s ease-in;
@@ -407,9 +363,9 @@
 
 .header-menu-right fa-icon,
 .header-menu-right button {
-  font-size: 20px;
+  font-size: 0.9rem;
   color: variables.$black;
-  padding: 0px 10px 0px 10px;
+  padding: 0 10px 0 10px;
   cursor: pointer;
 }
 
@@ -418,24 +374,26 @@
   right: 10px;
 }
 
-.bar {
-  cursor: pointer;
-  line-height: 64px !important;
-  font-size: 24px;
-  padding-left: 10px;
-}
-
-.login {
+.login, .add-listing, .palette, .language, .bar {
   outline: 0;
-  height: 50px;
+  height: 40px;
   border: 0;
-  padding: 0px 35px 0px 35px !important;
-  margin-left: 10px;
   border-radius: 5px;
   font-size: 16px !important;
   color: variables.$white;
-  text-transform: uppercase;
-  line-height: 50px;
+  line-height: 40px;
+}
+
+.login, .add-listing {
+  padding: 0 30px 0 30px !important;
+}
+
+.login-txt, .add-listing-txt {
+  display: inline-flex !important;
+}
+
+.login-icon, .add-listing-icon {
+  display: none !important;
 }
 
 .message-count {
@@ -449,10 +407,9 @@
 }
 
 .profile {
-  top: 0px;
-  position: relative !important;
-  padding-left: 10px;
-  padding-right: 10px;
+  top: 0;
+  height: 40px;
+  align-items: center;
 }
 
 .profile a {
@@ -460,10 +417,10 @@
 }
 
 .profile img {
-  width: 45px;
-  height: 45px;
-  margin-right: 10px;
-  border-radius: 25px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0;
 }
 
 .profile-menu {
@@ -481,9 +438,9 @@
 
 .admin-list {
   position: absolute;
-  width: 100%;
+  width: 230px;
   top: 70px;
-  left: 0;
+  right: 0;
   background-color: variables.$white;
   border: 1px solid variables.$bright-gray;
 }
@@ -507,11 +464,7 @@
 
 .admin-list fa-icon {
   float: right;
-  padding-right: 20px;
-}
-
-.bar {
-  top: 0px;
+  padding-right: 14px;
 }
 
 .profile-link,
@@ -525,6 +478,7 @@
   height: 100%;
   z-index: 1000;
   left: 0;
+  cursor: pointer;
 }
 
 .admin-link,
@@ -544,7 +498,7 @@
   border-bottom: 1px solid variables.$bright-gray;
 }
 
-.profile-menu ul>li {
+.profile-menu ul > li {
   height: 40px;
 }
 
@@ -553,8 +507,16 @@
   border-top: 1px solid variables.$bright-gray;
 }
 
+.header-top-right-dropdown ul li:first-child {
+  border-top: none;
+}
+
+.header-top-right-dropdown ul li {
+  border-top: 1px solid variables.$bright-gray;
+}
+
 .admin-list li:first-child {
-  border-top: 0px solid variables.$bright-gray;
+  border-top: 0 solid variables.$bright-gray;
 }
 
 .profile-menu-list li,
@@ -563,95 +525,88 @@
 }
 
 .profile-menu-list li:last-child,
-.admin-list ul+li:last-child {
+.admin-list ul + li:last-child {
   border-bottom: 1px solid variables.$bright-gray;
 }
 
-.profile-menu ul>li {
-  padding: 0px 10px 0px 10px;
+.profile-menu ul > li {
+  padding: 0 10px 0 10px;
   width: 100%;
   height: 40px;
   justify-content: flex-start !important;
   align-items: center;
 }
 
-.profile-menu ul>li>span {
+.profile-menu ul > li > span {
   width: 100%;
   text-align: left;
 }
 
 @media all and (max-width: 576px) {
-  .bar {
-    display: block !important;
-  }
-
   .non-mandatory {
     display: none !important;
   }
 
   .mandatory {
     display: inline-flex !important;
-    line-height: 70px !important;
+    line-height: 40px !important;
   }
 }
 
 @media all and (min-width: 576px) {
-  .bar {
-    display: block !important;
-  }
-
   .non-mandatory {
     display: none !important;
   }
 
   .mandatory {
     display: inline-flex !important;
-    line-height: 70px !important;
+    line-height: 40px !important;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .bar {
-    display: block !important;
-  }
-
   .non-mandatory {
     display: none !important;
   }
 
   .mandatory {
     display: inline-flex !important;
-    line-height: 70px !important;
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .bar {
-    display: none !important;
-  }
-
   .non-mandatory {
     display: inline-flex !important;
   }
 
   .mandatory {
+    display: none !important;
+  }
+
+  .login-txt, .add-listing-txt {
+    display: none !important;
+  }
+
+  .login-icon, .add-listing-icon {
     display: inline-flex !important;
-    line-height: 70px !important;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .bar {
-    display: none !important;
-  }
-
   .non-mandatory {
     display: inline-flex !important;
   }
 
   .mandatory {
+    display: none !important;
+  }
+
+  .login-txt, .add-listing-txt {
     display: inline-flex !important;
-    line-height: 70px !important;
+  }
+
+  .login-icon, .add-listing-icon {
+    display: none !important;
   }
 }
 
