@@ -3,54 +3,59 @@
     <div class="container-fluid ps-1 pe-1">
       <div class="row">
         <div class="col-md-12 col-lg-4 pt-5 ps-5">
-          <div class="footer-brand d-flex justify-content-center align-items-left flex-column">
-            <h4 class="color-{{theme.teritaryColor}} mb-0">ungal</h4>
-            <h2 class="d-flex flex-row color-{{theme.primaryColor}}">thedal<h4
-              class="color-{{theme.teritaryColor}} d-flex align-items-end mb-0">.com</h4></h2>
+          <div class="footer-brand d-flex justify-content-left align-items-left flex-row">
+            <h1 class="en color-white">{{'ungal' | translate: lang}}</h1>
+            <h1 class="en color-{{theme.primaryColor}}">{{'thedal' | translate: lang}}</h1><span
+            class="font-size-5rem height-50px line-height-20px color-{{theme.primaryColor}}">.</span>
           </div>
           <hr class="color-white width-90per">
           <ul class="pt-4">
-            <li class="pb-3">
+            <li class="pb-2">
               <h4 class="color-{{theme.teritaryColor}}">+91 91135 90303</h4>
             </li>
             <li>
               <h6 class="color-{{theme.teritaryColor}}">contact@ungalthedal.com</h6>
             </li>
+            <li>
+              <ul class="pt-2 d-flex flex-row">
+                <li class="pb-3 cursor-pointer">
+                  <fa-icon class="font-size-1-4rem pe-3 " [icon]="['fab','facebook']"></fa-icon>
+                </li>
+                <li class="pb-3 cursor-pointer">
+                  <fa-icon class="font-size-1-4rem pe-3" [icon]="['fab','instagram']"></fa-icon>
+                </li>
+                <li class="pb-3 cursor-pointer">
+                  <fa-icon class="font-size-1-4rem pe-3 " [icon]="['fab','twitter']"></fa-icon>
+                </li>
+                <li class="pb-3 cursor-pointer">
+                  <fa-icon class="font-size-1-4rem pe-3 " [icon]="['fab','youtube']"></fa-icon>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
         <div class="col-md-12 col-lg-2 pt-5 ps-5">
-          <h5 class="color-{{theme.primaryColor}} text-uppercase">Menu</h5>
+          <h5 class="color-white">Menu</h5>
           <ul class="pt-4">
             <li *ngFor="let menu of menuList" class="pb-3">
-              <span class="color-{{theme.teritaryColor}} text-uppercase">{{menu.name}}</span>
+              <span class="color-light-gray">{{menu.name}}</span>
             </li>
           </ul>
         </div>
         <div class="col-md-12 col-lg-2  pt-5 ps-5">
-          <h5 class="color-{{theme.primaryColor}} text-uppercase">Follow Us</h5>
+          <h5 class="color-white">Services</h5>
           <ul class="pt-4">
-            <li class="pb-3">
-              <fa-icon [icon]="['fab','facebook']"></fa-icon>
-              <span class="ps-2 color-{{theme.teritaryColor}}">FACEBOOK</span>
-            </li>
-            <li class="pb-3">
-              <fa-icon [icon]="['fab','instagram']"></fa-icon>
-              <span class="ps-2 color-{{theme.teritaryColor}}">INSTAGRAM</span>
-            </li>
-            <li class="pb-3">
-              <fa-icon [icon]="['fab','twitter']"></fa-icon>
-              <span class="ps-2 color-{{theme.teritaryColor}}">TWITTER</span>
-            </li>
-            <li class="pb-3">
-              <fa-icon [icon]="['fab','youtube']"></fa-icon>
-              <span class="ps-2 color-{{theme.teritaryColor}}">YOUTUBE</span>
+            <li *ngFor="let menu of menuList[1].children" class="pb-3">
+              <span class="color-light-gray">{{menu.name}}</span>
             </li>
           </ul>
         </div>
         <div class="col-md-12 col-lg-4  pt-5 ps-5 pe-5">
-          <h5 class="color-{{theme.primaryColor}} text-uppercase">Newsletter</h5>
+          <h5 class="color-white">Newsletter</h5>
           <input type="email" class="form-control mt-4 me-5"/>
-          <input type="button" class="text-uppercase form-control mt-2 bg-color-{{theme.primaryColor}} outline-0 border-0 border-radius-3px" value="Subscribe"/>
+          <input type="button"
+                 class="text-uppercase form-control mt-2 bg-color-black color-white outline-0 border-0 border-radius-3px"
+                 value="Subscribe"/>
         </div>
       </div>
     </div>

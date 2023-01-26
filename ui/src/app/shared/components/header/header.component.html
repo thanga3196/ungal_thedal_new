@@ -1,7 +1,7 @@
 <div class="header">
-  <section class="container-fluid header-menu ps-3 pe-0 d-flex bg-color-{{theme.teritaryColor}}">
+  <section class="container-fluid header-menu ps-3 pe-3 d-flex bg-color-{{theme.teritaryColor}}">
     <div class="header-brand">
-      <h2 class="en">{{'ungal' | translate: lang}}</h2>&nbsp;<img class="height-72px" src="assets/icons/logo.png"/>
+      <h2 class="en">{{'ungal' | translate: lang}}</h2><h2 class="en color-{{theme.primaryColor}}">{{'thedal' | translate: lang}}</h2><span class="font-size-5rem height-40px line-height-10px color-{{theme.primaryColor}}">.</span>
     </div>
     <div class="header-menu-wrapper">
       <ul class="header-menu-left ps-0">
@@ -10,28 +10,17 @@
             [ngClass]="[isActive(menu.routerLink) ? 'position-relative color-'+theme.primaryColor:'position-relative', isActive(menu.routerLink) ? 'color-'+theme.secondaryColor:'color-'+theme.secondaryColor]"
             [routerLink]="menu.routerLink">{{menu.name | translate: lang}}
             <div *ngIf="menu.children.length > 0" class="service-link" (click)="menu.clicked = !menu.clicked"></div>
-          </a>
-          <div *ngIf="menu.children.length > 0 && menu.clicked" class="header-menu-left-dropdown bg-color-white">
-            <div class="slider">
-              <div class="left" (click)="scrollLeft()">
-                <fa-icon [icon]="faAngleLeft"></fa-icon>
-              </div>
-              <div #servicesList class="list">
-                <div class="list-item bg-color-{{theme.teritaryColor}} color-black"
-                     *ngFor="let subMenu of menu.children" [routerLink]="subMenu.routerLink"
-                     (click)="menu.clicked = false">
-                  <img src="assets/images/icons/{{subMenu.logo}}.png"/>
-                  <div class="position-absolute bottom-0">
-                    <span class="text-center"
-                          [routerLink]="subMenu.routerLink">{{subMenu.name | translate: lang}}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="right" (click)="scrollRight()">
-                <fa-icon [icon]="faAngleRight"></fa-icon>
-              </div>
+            <fa-icon *ngIf="menu.children.length > 0" [icon]="faAngleDown" class="ps-2"></fa-icon>
+            <div *ngIf="menu.children.length > 0 && menu.clicked" class="drop-down-menu-list en">
+              <ul>
+                <li *ngFor="let subMenu of menu.children" (click)="expandAdminMenu(subMenu, $event)">
+                  <a [routerLink]="subMenu.routerLink" class="p-0">
+                    <span>{{subMenu.name}}</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-          </div>
+          </a>
         </li>
         <li *ngFor="let adminMenu of adminMenuList"
             class="non-mandatory align-content-center align-items-center pe-0 position-relative justify-items-center">
@@ -40,7 +29,7 @@
             <span>{{adminMenu.name | translate: lang}}</span>
             <div class="admin-link" (click)="showAdministration = !showAdministration"></div>
             <fa-icon [icon]="faAngleDown" class="ps-3"></fa-icon>
-            <div *ngIf="showAdministration" class="admin-list en">
+            <div *ngIf="showAdministration" class="drop-down-menu-list en">
               <ul>
                 <li *ngFor="let adminSubMenu of adminMenu.children" (click)="expandAdminMenu(adminSubMenu, $event)">
                   <a [routerLink]="adminSubMenu.routerLink" class="p-0">
@@ -64,7 +53,7 @@
         <li class="width-40px me-1">
           <div class="palette-link" (click)="showPalette = !showPalette"></div>
           <button
-            class="palette non-mandatory bg-color-{{theme.primaryColor}} p-0 width-40px justify-content-center">
+            class="palette non-mandatory bg-color-black p-0 width-40px justify-content-center">
             <fa-icon [icon]="['fas','palette']" class="color-white"></fa-icon>
           </button>
           <div class="header-top-right-dropdown bg-color-white" *ngIf="showPalette">
@@ -78,7 +67,7 @@
         </li>
         <li class="width-40px me-1">
           <div class="lang-link" (click)="showLang = !showLang"></div>
-          <button class="language non-mandatory width-40px bg-color-{{theme.primaryColor}} p-0">
+          <button class="language non-mandatory width-40px bg-color-black p-0">
             <fa-icon [icon]="['fas','language']" class="color-white"></fa-icon>
           </button>
           <div class="header-top-right-dropdown bg-color-white" *ngIf="showLang">
@@ -90,24 +79,24 @@
           </div>
         </li>
         <li class="me-1">
-          <button class="add-listing add-listing-txt non-mandatory bg-color-{{theme.primaryColor}} color-white"
+          <button class="add-listing add-listing-txt non-mandatory bg-color-black color-white"
                   routerLink="/add-listing">
             Add Listing
           </button>
           <button
-            class="add-listing-icon language non-mandatory width-40px bg-color-{{theme.primaryColor}} p-0 width-40px justify-content-center"
+            class="add-listing-icon language non-mandatory width-40px bg-color-black p-0 width-40px justify-content-center"
             routerLink="/add-listing">
             <fa-icon [icon]="['fas','plus']" class="color-white"></fa-icon>
           </button>
         </li>
         <li class="profile">
           <button *ngIf="!isLoggedIn()"
-                  class="login login-txt non-mandatory bg-color-{{theme.primaryColor}} color-white"
+                  class="login login-txt non-mandatory bg-color-black color-white"
                   routerLink="/login">
             Login
           </button>
           <button *ngIf="!isLoggedIn()"
-                  class="language non-mandatory width-40px bg-color-{{theme.primaryColor}} p-0 width-40px justify-content-center login-icon"
+                  class="language non-mandatory width-40px bg-color-black p-0 width-40px justify-content-center login-icon"
                   routerLink="/login">
             <fa-icon [icon]="['fas','user']" class="color-white"></fa-icon>
           </button>
@@ -136,7 +125,7 @@
         </li>
         <li class="">
           <button
-            class="bar mandatory m-0 bg-color-{{theme.primaryColor}} color-white p-0 width-40px justify-content-center">
+            class="bar mandatory m-0 bg-color-black color-white p-0 width-40px justify-content-center">
             <div class="bar-link" (click)="openMenu()"></div>
             <fa-icon [icon]="['fas','bars']" class="color-white"></fa-icon>
           </button>

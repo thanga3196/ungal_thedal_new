@@ -28,11 +28,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 .en {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .ta {
   font-family: 'Meera Inimai', sans-serif;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .margin-top-82px {

@@ -100,14 +100,17 @@
 
 .banner-title {
   margin-top: 1em;
-  font-family: 'Poppins', sans-serif !important;
 }
 
 .banner-title h6 {
   font-weight: 800;
   text-align: center;
   color: #FFFFFF;
-  font-size: 58px;
+  font-size: 4rem;
+}
+
+.banner-title h2 {
+  font-size: 2rem;
 }
 
 .banner-search {
@@ -172,7 +175,57 @@ input[type=text] {
   font-size: 20px;
 }
 
-fa-icon {
-  font-size: 16px;
+.carousel-left fa-icon, .carousel-right fa-icon {
+  font-size: 1rem;
+}
+
+@media all and (max-width: 576px) {
+  .banner-title h6 {
+    font-size: 1.8rem !important;
+  }
+
+  .banner-title h2 {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media all and (min-width: 576px) {
+  .banner-title h6 {
+    font-size: 1.9rem !important;
+  }
+
+  .banner-title h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .banner-title h6 {
+    font-size: 2.2rem !important;
+  }
+
+  .banner-title h2 {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .banner-title h6 {
+    font-size: 3.2rem !important;
+  }
+
+  .banner-title h2 {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .banner-title h6 {
+    font-size: 4rem !important;
+  }
+
+  .banner-title h2 {
+    font-size: 2rem !important;
+  }
 }
 

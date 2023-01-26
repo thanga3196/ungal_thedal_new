@@ -2,7 +2,7 @@ import {Theme} from "src/app/shared/models/Theme";
 
 export class Constant {
   public static defaultTheme: Theme = {
-    primaryColor: "denim",
+    primaryColor: "dodger-blue",
     secondaryColor: "black",
     teritaryColor: "white",
     primaryBackgroundColor: "cultured"

@@ -194,19 +194,31 @@ export class MenuConstant {
       clicked: false,
       children: [
         {
-          name: "Denim",
+          name: "Dodger Blue",
           routerLink: undefined,
           clicked: false,
           theme: Constant.defaultTheme,
           children: []
         },
         {
-          name: 'Dodger Blue',
+          name: 'Orange',
           routerLink: undefined,
           clicked: false,
           children: [],
           theme: {
-            primaryColor: "dodger-blue",
+            primaryColor: "orange",
+            secondaryColor: "black",
+            teritaryColor: "white",
+            primaryBackgroundColor: "cultured"
+          }
+        },
+        {
+          name: 'Indigo',
+          routerLink: undefined,
+          clicked: false,
+          children: [],
+          theme: {
+            primaryColor: "indigo",
             secondaryColor: "black",
             teritaryColor: "white",
             primaryBackgroundColor: "cultured"
@@ -275,9 +287,7 @@ export class MenuConstant {
       name: "Notification",
       routerLink: undefined,
       clicked: false,
-      children: [
-
-      ]
+      children: []
     }
   ];
 }
