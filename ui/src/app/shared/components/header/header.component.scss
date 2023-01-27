@@ -105,10 +105,16 @@
 }
 
 .header-brand {
-  height: 70px;
+  height: 40px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
+}
+
+.header-brand div {
+  width: 10px;
+  height: 10px;
+  border-radius: 25px;
 }
 
 .header-brand h2 {

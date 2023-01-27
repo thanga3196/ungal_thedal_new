@@ -83,17 +83,17 @@
       </div>
     </div>
     <div class="row mb-5">
-      <div *ngFor="let category of filteredCategory" class="col-sm-12 col-md-4 col-lg-4">
+      <div *ngFor="let category of filteredCategory" class="col-sm-12 col-md-4 col-lg-3 col-xl-2">
         <div class="bg-white text-center rounded-xl shadow-sm p-4">
-          <div class="py-4 mt-2">
-            <img [src]="category.logoPath" alt="icon"/>
+          <div class="py-2 mt-1">
+            <img [src]="category.logoPath" alt="icon" width="35" height="35"/>
           </div>
-          <h5 class="font-weight-700">{{category.nme}}</h5>
-          <div class="pb-2">
+          <h6 class="font-weight-700">{{category.nme}}</h6>
+          <div class="">
             <p>{{category.subCategoryCount}} Listings</p>
           </div>
         </div>
-        <div style="height: 30px;"></div>
+        <div class="height-30px"></div>
       </div>
     </div>
   </div>

@@ -1,7 +1,9 @@
 <div class="header">
-  <section class="container-fluid header-menu ps-3 pe-3 d-flex bg-color-{{theme.teritaryColor}}">
+  <section class="container-fluid header-menu ps-3 pe-3 d-flex bg-color-{{theme.teritaryColor}} align-items-center">
     <div class="header-brand">
-      <h2 class="en">{{'ungal' | translate: lang}}</h2><h2 class="en color-{{theme.primaryColor}}">{{'thedal' | translate: lang}}</h2><span class="font-size-5rem height-40px line-height-10px color-{{theme.primaryColor}}">.</span>
+      <h2 class="en">{{'ungal' | translate: lang}}</h2>
+      <h2 class="en color-{{theme.primaryColor}}">{{'thedal' | translate: lang}}</h2>
+      <div class="bg-color-{{theme.primaryColor}}"></div>
     </div>
     <div class="header-menu-wrapper">
       <ul class="header-menu-left ps-0">
@@ -100,7 +102,7 @@
                   routerLink="/login">
             <fa-icon [icon]="['fas','user']" class="color-white"></fa-icon>
           </button>
-          <a *ngIf="isLoggedIn()" class="position-relative">
+          <a *ngIf="isLoggedIn()" class="position-relative non-mandatory">
             <div class="profile-link" (click)="showProfile = !showProfile"></div>
             <img *ngIf="userDetails.imgPath" [src]="userDetails.imgPath" class="border-1px-{{theme.primaryColor}}"/>
             <div *ngIf="showProfile" class="profile-menu en">

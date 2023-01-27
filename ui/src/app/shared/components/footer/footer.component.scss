@@ -6,15 +6,21 @@
 }
 
 .footer-brand {
-  height: 70px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 
-.footer-brand h3, .footer-brand h1 {
+.footer-brand div {
+  width: 10px;
+  height: 10px;
+  border-radius: 25px;
+}
+
+.footer-brand h2 {
   margin-bottom: 0;
-}
-
-.footer-brand h3 {
-  align-items: flex-end !important;
+  align-items: baseline;
 }
 
 .footer a {
