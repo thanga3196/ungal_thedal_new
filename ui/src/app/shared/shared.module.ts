@@ -13,6 +13,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {fas} from '@fortawesome/free-solid-svg-icons';
 import {far} from "@fortawesome/free-regular-svg-icons";
 import {fab} from "@fortawesome/free-brands-svg-icons";
+import {ToastModule} from "primeng/toast";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import {fab} from "@fortawesome/free-brands-svg-icons";
     SideMenuComponent,
     PreLoaderComponent,
     IconPickerComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ToastModule
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
     RouterModule,
     ReactiveFormsModule,
+    ToastModule
   ],
 })
 export class SharedModule {

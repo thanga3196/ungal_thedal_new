@@ -9,12 +9,13 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {DropdownModule} from "primeng/dropdown";
 import {TabViewModule} from "primeng/tabview";
 import {TableModule} from "primeng/table";
-import {ConfirmationService} from "primeng/api";
+import {ConfirmationService, MessageService} from "primeng/api";
 import {CategorySearchComponent} from "./components/category/category-search/category-search.component";
 import {SubCategoryComponent} from "./components/sub-category/sub-category.component";
 import {SubCategorySearchComponent} from "./components/sub-category/sub-category-search/sub-category-search.component";
 import {Category1Component} from "./components/category/category1.component";
 import {SharedModule} from "src/app/shared/shared.module";
+
 @NgModule({
   declarations: [
     CategoryComponent,
@@ -36,7 +37,7 @@ import {SharedModule} from "src/app/shared/shared.module";
     TabViewModule,
     TableModule
   ],
-  providers: [ConfirmationService]
+  providers: [ConfirmationService, MessageService]
 })
 export class CategoryModule {
 }

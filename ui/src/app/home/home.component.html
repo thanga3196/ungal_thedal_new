@@ -1,7 +1,7 @@
 <div class="height"></div>
 <div class="carousel">
   <div class="carousel-left">
-    <fa-icon [icon]="faAngleLeft" class="color-{{theme.primaryColor}}" (click)="slidePrev()"></fa-icon>
+    <fa-icon [icon]="['fas','angle-left']" class="color-{{theme.primaryColor}}" (click)="slidePrev()"></fa-icon>
   </div>
   <div class="carousel-list">
     <div class="carousel-item carousel-item-visible">
@@ -22,7 +22,7 @@
                   <div class="form-group">
                     <div class="banner-search-select">
                       <auto-complete [id]="'search'" [placeHolder]="'Search...'" [fontSize]="'1.3rem'" [icon]="faSearch"
-                                     [iconSize]="'16px'" [items]="filteredLocation" [key]="'id'" [value]="'nme'">
+                                     [iconSize]="'16px'" [items]="locationList" [key]="'id'" [value]="'nme'">
                       </auto-complete>
                     </div>
                   </div>
@@ -33,7 +33,7 @@
                   <div class="form-group">
                     <div class="banner-search-select">
                       <auto-complete [id]="'location'" [placeHolder]="'Location...'" [fontSize]="'1.3rem'"
-                                     [icon]="faSearch" [iconSize]="'16px'" [items]="filteredLocation" [key]="'id'"
+                                     [icon]="faSearch" [iconSize]="'16px'" [items]="locationList" [key]="'id'"
                                      [value]="'nme'">
                       </auto-complete>
                     </div>
@@ -43,7 +43,7 @@
                   <div class="form-group">
                     <div class="banner-search-select">
                       <auto-complete [id]="'category'" [placeHolder]="'Category...'" [fontSize]="'1.3rem'"
-                                     [icon]="faSearch" [iconSize]="'16px'" [items]="filteredCategory" [key]="'id'"
+                                     [icon]="faSearch" [iconSize]="'16px'" [items]="categoryList" [key]="'id'"
                                      [value]="'nme'">
                       </auto-complete>
                     </div>
@@ -68,7 +68,7 @@
     </div>
   </div>
   <div class="carousel-right">
-    <fa-icon [icon]="faAngleRight" class="color-{{theme.primaryColor}}" (click)="slideNext()"></fa-icon>
+    <fa-icon [icon]="['fas','angle-right']" class="color-{{theme.primaryColor}}" (click)="slideNext()"></fa-icon>
   </div>
   <div class="carousel-dot"></div>
 </div>
@@ -83,17 +83,29 @@
       </div>
     </div>
     <div class="row mb-5">
-      <div *ngFor="let category of filteredCategory" class="col-sm-12 col-md-4 col-lg-3 col-xl-2">
+      <div *ngFor="let category of popularCategoryList" class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
         <div class="bg-white text-center rounded-xl shadow-sm p-4">
           <div class="py-2 mt-1">
-            <img [src]="category.logoPath" alt="icon" width="35" height="35"/>
+            <img [src]="category.logoPath" alt="icon" width="40" height="40"/>
           </div>
-          <h6 class="font-weight-700">{{category.nme}}</h6>
+          <h6 class="font-weight-700 height-40px d-flex justify-content-center align-items-center">{{category.nme}}</h6>
           <div class="">
             <p>{{category.subCategoryCount}} Listings</p>
           </div>
         </div>
         <div class="height-30px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="how-it-works py-5 bg-color-white">
+  <div class="container">
+    <div class="row my-5">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="text-center">
+          <h2 class="color-{{theme.primaryColor}}">Find</h2>
+          <h1>{{'How it works' | translate: lang}}</h1>
+        </div>
       </div>
     </div>
   </div>

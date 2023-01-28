@@ -168,15 +168,8 @@
   background-color: variables.$cultured !important;
 }
 
-.background-about {
+.background-about, .background-contact {
   background-image: url("~src/assets/images/about/about-us.jpg");
-  background-color: rgba(0,0,0,0.5);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.background-contact {
-  background-image: url("~src/assets/images/contact/contact-us.jpg");
   background-color: rgba(0,0,0,0.5);
   background-repeat: no-repeat;
   background-size: cover;

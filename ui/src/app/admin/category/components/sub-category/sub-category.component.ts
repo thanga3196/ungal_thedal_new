@@ -1,18 +1,19 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { Category } from 'src/app/admin/category/models/Category';
-import { CommonService } from 'src/app/shared/services/common/common.service';
-import { MenuConstant } from 'src/app/core/constants/menu.constant';
-import { YesOrNoList } from 'src/app/shared/models/YesOrNoList';
-import { Alert } from 'src/app/shared/models/Alert';
-import { AlertType } from 'src/app/core/enums/alert-type';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { SubCategoryService } from 'src/app/admin/category/services/sub-category/sub-category.service';
-import { SubCategory } from 'src/app/admin/category/models/SubCategory';
-import { Theme } from "src/app/shared/models/Theme";
-import { Icon } from 'src/app/shared/models/Icon';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Location} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
+import {Category} from 'src/app/admin/category/models/Category';
+import {CommonService} from 'src/app/shared/services/common/common.service';
+import {MenuConstant} from 'src/app/core/constants/menu.constant';
+import {YesOrNoList} from 'src/app/shared/models/YesOrNoList';
+import {Alert} from 'src/app/shared/models/Alert';
+import {AlertType} from 'src/app/core/enums/alert-type';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Subscription} from 'rxjs';
+import {SubCategoryService} from 'src/app/admin/category/services/sub-category/sub-category.service';
+import {SubCategory} from 'src/app/admin/category/models/SubCategory';
+import {Theme} from "src/app/shared/models/Theme";
+import {Icon} from 'src/app/shared/models/Icon';
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-sub-category',
@@ -32,7 +33,7 @@ export class SubCategoryComponent implements OnInit, AfterViewInit {
   lang: string = '';
   theme!: Theme;
 
-  constructor(private commonService: CommonService, private subCategoryService: SubCategoryService, private activatedRoute: ActivatedRoute, private location: Location) {
+  constructor(private commonService: CommonService, private subCategoryService: SubCategoryService, private activatedRoute: ActivatedRoute, private location: Location, private messageService: MessageService) {
     this.commonService.setShowNav(true);
     this.initSubscription();
     this.commonService.getCategoryList().subscribe((data: any) => {
@@ -78,29 +79,29 @@ export class SubCategoryComponent implements OnInit, AfterViewInit {
       if (id == 0)
         return;
       this.busyLoading = this.subCategoryService.getById(subCategory).subscribe({
-        next: (response) => {
-          this.showAlert = true;
-          let subCategory: any = response;
-          if ('id' in subCategory && subCategory?.id > 0) {
-            this.showAlert = false;
-            this.subCategoryForm.get('id')?.setValue(subCategory.id);
-            this.subCategoryForm.get('nme')?.setValue(subCategory.nme);
-            this.subCategoryForm.get('categoryId')?.setValue(subCategory.categoryId);
-            this.subCategoryForm.get('active')?.setValue(subCategory.active);
-            this.subCategoryForm.get('logo')?.setValue(subCategory.logo);
-          } else {
+          next: (response) => {
             this.showAlert = true;
-            this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
+            let subCategory: any = response;
+            if ('id' in subCategory && subCategory?.id > 0) {
+              this.showAlert = false;
+              this.subCategoryForm.get('id')?.setValue(subCategory.id);
+              this.subCategoryForm.get('nme')?.setValue(subCategory.nme);
+              this.subCategoryForm.get('categoryId')?.setValue(subCategory.categoryId);
+              this.subCategoryForm.get('active')?.setValue(subCategory.active);
+              this.subCategoryForm.get('logo')?.setValue(subCategory.logo);
+            } else {
+              this.showAlert = true;
+              this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
+            }
+            this.submitted = false;
+          },
+          error: (errorResponse) => {
+            this.showAlert = true;
+            if (errorResponse?.error?.message)
+              this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
+            else this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
           }
-          this.submitted = false;
-        },
-        error: (errorResponse) => {
-          this.showAlert = true;
-          if (errorResponse?.error?.message)
-            this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
-          else this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);
         }
-      }
       );
     });
   }
@@ -115,7 +116,11 @@ export class SubCategoryComponent implements OnInit, AfterViewInit {
           if ('id' in subCategory && subCategory?.id > 0) {
             this.subCategoryForm.get("id")?.setValue(subCategory?.id);
             this.location.replaceState("/admin/sub-category/" + subCategory?.id);
-            this.alert = new Alert("Sub Category '" + subCategory?.nme + "' saved successfully.", AlertType.SUCCESS);
+            this.messageService.add({
+              severity: "success",
+              summary: "Save",
+              detail: "Sub Category '" + subCategory?.nme + "' saved successfully."
+            });
           } else if ('message' in subCategory) {
             this.alert = new Alert(subCategory?.message, AlertType.WARNING);
           } else this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);

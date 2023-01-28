@@ -20,14 +20,10 @@ import {Theme} from "src/app/shared/models/Theme";
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   faSearch: IconDefinition = faSearch;
-  faLocationArrow: IconDefinition = faLocationArrow;
-  faBriefCase: IconDefinition = faBriefcase;
-  faAngleLeft: IconDefinition = faAngleLeft;
-  faAngleRight: IconDefinition = faAngleRight;
-  categoryList: Category[] = [];
   searchForm!: FormGroup;
-  filteredLocation!: Location[];
-  filteredCategory!: Category[];
+  locationList!: Location[];
+  categoryList!: Category[];
+  popularCategoryList!: Category[];
   carouselItemsList: any[] = [];
   carouselList: any[] = [
     {
@@ -90,9 +86,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.buildForm();
     this.commonService.getSearchDropDownDetails().subscribe((data: any) => {
-      this.filteredLocation = data.locationListViewList;
-      this.filteredCategory = data.categoryListViewList;
+      this.locationList = data.locationListViewList;
+      this.categoryList = data.categoryListViewList as Category[];
+      this.popularCategoryList = this.getPopularCategoriesList(data.categoryListViewList as Category[])
     });
+  }
+
+  getPopularCategoriesList(categoryList: Category[]) {
+    return categoryList.sort((a, b) =>
+      b.subCategoryCount - a.subCategoryCount
+    ).slice(0, 12)
   }
 
   buildForm() {

@@ -4,170 +4,239 @@
   <div class="row align-items-center text-center pt-5 pb-5 gap-4 background-contact position-relative width-100per m-0">
     <div class="width-100per height-100per position-absolute p-0 bg-color-black-layer"></div>
     <h1
-      class="ps-2 color-{{theme.teritaryColor}} m-0 text-uppercase z-index-998 font-size-2_5rem pb-2 {{lang}}">{{'About Us' | translate: lang}}</h1>
+      class="ps-2 color-{{theme.teritaryColor}} m-0 z-index-998 font-size-2_5rem pb-2 {{lang}}">{{'Contact Us' | translate: lang}}</h1>
     <nav style="margin-top: -18px;
     padding-left: 0.6rem !important;" aria-label="breadcrumb" class="ps-3">
       <ol class="breadcrumb justify-content-center mb-0">
-        <li class="breadcrumb-item text-uppercase z-index-998 color-{{theme.primaryColor}}"><a href="home"
-                                                                                               style="text-decoration: none;"
-                                                                                               class="color-{{theme.primaryColor}} font-size-1-4rem {{lang}}">Home</a>
+        <li class="breadcrumb-item z-index-998 color-{{theme.primaryColor}}"><a href="home"
+                                                                                style="text-decoration: none;"
+                                                                                class="color-{{theme.primaryColor}} font-size-1-4rem {{lang}}">Home</a>
         </li>
         <li
-          class="breadcrumb-item text-uppercase active z-index-998 color-{{theme.teritaryColor}} font-size-1-4rem {{lang}}"
-          aria-current="page">About Us
+          class="breadcrumb-item active z-index-998 color-{{theme.teritaryColor}} font-size-1-4rem {{lang}}"
+          aria-current="page">Contact
         </li>
       </ol>
     </nav>
   </div>
-  <div class="row contact-detail width-100per py-4 m-0 p-0 bg-color-cultured">
-    <div class="container-fluid m-0 p-0">
-      <div class="row contact-detail-top my-4 p-0 m-0">
-        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <div class="our-details py-5 bg-color-cultured">
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-lg-8 offset-lg-2">
           <div class="text-center">
-            <h1 class="text-uppercase {{lang}}">{{'Our Details' | translate: lang}}</h1>
+            <h2 class="color-{{theme.primaryColor}}">Let's Connect</h2>
+            <h1>{{'Our Details' | translate: lang}}</h1>
           </div>
         </div>
       </div>
-      <div class="row contact-detail-list my-5 m-0 p-0">
-        <div class="container ps-5 pe-5">
-          <div class="row">
-            <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-              <div class="card">
-                <img class="card-img-top" src="assets/images/contact/phone.jpg" alt="Mobile">
-                <div class="card-body bg-color-dodger-blue">
-                  <h3
-                    class="card-title text-center text-uppercase {{lang}} color-{{theme.teritaryColor}}">{{'Mobile' | translate: lang}}</h3>
-                  <h4 class="card-text en text-center color-{{theme.teritaryColor}}">+91 91135 90303</h4>
-                </div>
-              </div>
+      <div class="row mb-0">
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+          <div class="bg-white text-center rounded-xl shadow-sm p-4">
+            <div class="py-2 mt-1">
+              <fa-icon [icon]="['far','envelope']" class="color-black font-size-3rem"></fa-icon>
             </div>
-            <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-              <div class="card">
-                <img class="card-img-top" src="assets/images/contact/email.jpg" alt="Email">
-                <div class="card-body bg-color-razzmatazz">
-                  <h3
-                    class="card-title text-center text-uppercase {{lang}} color-{{theme.teritaryColor}}">{{'Email' | translate: lang}}</h3>
-                  <h4 class="card-text text-center color-{{theme.teritaryColor}} en">contact@ungalthedal.com</h4>
-                </div>
-              </div>
+            <h3
+              class="font-weight-700 height-40px d-flex justify-content-center align-items-center color-{{theme.primaryColor}}">
+              Email</h3>
+            <div class="">
+              <h5>contact@ungalthedal.com</h5>
             </div>
-            <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-              <div class="card">
-                <img class="card-img-top" src="assets/images/contact/whatsapp.jpg" alt="Whatsapp">
-                <div class="card-body bg-color-black">
-                  <h3
-                    class="card-title text-center text-uppercase color-{{theme.teritaryColor}} {{lang}}">{{'Whatsapp' | translate: lang}}</h3>
-                  <h4 class="card-text text-center color-{{theme.teritaryColor}} en">+91 91135 90303</h4>
+          </div>
+          <div class="height-30px"></div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+          <div class="bg-white text-center rounded-xl shadow-sm p-4">
+            <div class="py-2 mt-1">
+              <fa-icon [icon]="['fas','mobile']" class="color-black font-size-3rem"></fa-icon>
+            </div>
+            <h3
+              class="font-weight-700 height-40px d-flex justify-content-center align-items-center color-{{theme.primaryColor}}">
+              Mobile</h3>
+            <div class="">
+              <h5>+91 91135 90303</h5>
+            </div>
+          </div>
+          <div class="height-30px"></div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+          <div class="bg-white text-center rounded-xl shadow-sm p-4">
+            <div class="py-2 mt-1">
+              <fa-icon [icon]="['fab','whatsapp']" class="color-black font-size-3rem"></fa-icon>
+            </div>
+            <h3
+              class="font-weight-700 height-40px d-flex justify-content-center align-items-center color-{{theme.primaryColor}}">
+              Whatsapp</h3>
+            <div class="">
+              <h5>+91 91135 90303</h5>
+            </div>
+          </div>
+          <div class="height-30px"></div>
+        </div>
+      </div>
+      <div class="row mb-0">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="text-center rounded-xl p-4">
+            <h4
+              class="font-weight-700 height-40px d-flex justify-content-center align-items-center color-{{theme.primaryColor}}">
+              Follow Us</h4>
+          </div>
+          <div class="row mb-5">
+            <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+              <div class="bg-white text-center rounded-xl shadow-sm p-4">
+                <div class="py-2 mt-1">
+                  <fa-icon [icon]="['fab','facebook']" class="color-black font-size-3rem"></fa-icon>
                 </div>
               </div>
+              <div class="height-30px"></div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+              <div class="bg-white text-center rounded-xl shadow-sm p-4">
+                <div class="py-2 mt-1">
+                  <fa-icon [icon]="['fab','instagram']" class="color-black font-size-3rem"></fa-icon>
+                </div>
+              </div>
+              <div class="height-30px"></div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+              <div class="bg-white text-center rounded-xl shadow-sm p-4">
+                <div class="py-2 mt-1">
+                  <fa-icon [icon]="['fab','twitter']" class="color-black font-size-3rem"></fa-icon>
+                </div>
+              </div>
+              <div class="height-30px"></div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+              <div class="bg-white text-center rounded-xl shadow-sm p-4">
+                <div class="py-2 mt-1">
+                  <fa-icon [icon]="['fab','youtube']" class="color-black font-size-3rem"></fa-icon>
+                </div>
+              </div>
+              <div class="height-30px"></div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row my-3 m-0 p-0">
       </div>
     </div>
   </div>
-  <div class="row card box-shadow-normal width-100per m-0 mb-0">
-    <div>
-      <h2 class="color-black m-0 text-center pt-5 pb-2 text-uppercase {{lang}}">{{'Contact Us' | translate: lang}}</h2>
-      <h4 class="color-theme m-0 text-center pt-2 pb-2">Let's Discuss</h4>
-    </div>
-    <form [formGroup]="contactForm" class="p-0">
-      <div class="container-fluid pt-4 pb-4">
-        <div class="row">
-          <div class="col-lg-12 col-md-12">
-            <div class="container-fluid m-0 ps-3 pe-3">
-              <div class="row">
-                <div class="col-lg-6 col-md-12 form-group">
-                  <label for="name">{{'Name' | translate: lang}}</label>
-                  <input id="name" type="text" class="form-control" placeholder="Your Name" autocomplete="off"
-                         formControlName="name"/>
-                  <div *ngIf="submitted && contactForm.controls['name'].errors" class="mt-1">
-                    <div *ngIf="contactForm.controls['name'].errors['required']" class="color-red">Name is
-                      required.
-                    </div>
-                    <div *ngIf="contactForm.controls['name'].errors['minlength']" class="color-red">Name should be 6 or
-                      more characters long.
-                    </div>
-                    <div *ngIf="contactForm.controls['name'].errors['maxlength']" class="color-red">Name should not be
-                      more than 60 characters long.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <label for="email">{{'Email' | translate: lang}}</label>
-                  <input id="email" type="text" class="form-control" placeholder="Your Email" autocomplete="off"
-                         formControlName="email"/>
-                  <div *ngIf="submitted && contactForm.controls['email'].errors" class="mt-1">
-                    <div *ngIf="contactForm.controls['email'].errors['required']" class="color-red">Email is required
-                    </div>
-                    <div *ngIf="contactForm.controls['email'].errors['email']" class="color-red">Email is invalid
-                    </div>
-                    <div *ngIf="contactForm.controls['email'].errors['maxlength']" class="color-red">Email should not be
-                      more than 250 characters long.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12 col-md-12 form-group">
-                  <label for="subject">{{'Subject' | translate: lang}}</label>
-                  <input id="subject" type="text" class="form-control" placeholder="Your Subject" autocomplete="off"
-                         formControlName="subject"/>
-                  <div *ngIf="submitted && contactForm.controls['subject'].errors" class="mt-1">
-                    <div *ngIf="contactForm.controls['subject'].errors['required']" class="color-red">Subject is
-                      required
-                    </div>
-                    <div *ngIf="contactForm.controls['subject'].errors['minlength']" class="color-red">Subject should be
-                      15 or
-                      more characters long.
-                    </div>
-                    <div *ngIf="contactForm.controls['subject'].errors['maxlength']" class="color-red">Subject should
-                      not be
-                      more than 100 characters long.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12 col-md-12 form-group">
-                  <label for="message">{{'Description' | translate: lang}}
-                    ({{messageCount()}} {{'Characters Remaining' | translate: lang}})</label>
-                  <textarea id="message" class="form-control height-150px" placeholder="Your Description"
-                            formControlName="message"></textarea>
-                  <div *ngIf="submitted && contactForm.controls['message'].errors" class="mt-1">
-                    <div *ngIf="contactForm.controls['message'].errors['required']" class="color-red">Description is
-                      required
-                    </div>
-                    <div *ngIf="contactForm.controls['message'].errors['minlength']" class="color-red">Description
-                      should be 30 or
-                      more characters long.
-                    </div>
-                    <div *ngIf="contactForm.controls['message'].errors['maxlength']" class="color-red">Description
-                      should not be
-                      more than 500 characters long.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row height-40px">
-                <div class="col-lg-6 col-md-12 form-group">
-                  <h6 *ngIf="showAlert" class="line-height-40px {{alert.type}}">{{alert.msg}}</h6>
-                </div>
-                <div class="col-lg-6 col-md-12 form-group text-right contact-button">
-                  <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="send()">
-                    Send
-                  </button>
-                  <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5" (click)="reset()">
-                    Reset
-                  </button>
-                </div>
-              </div>
-            </div>
+  <div class="contact-us py-5 bg-color-white">
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="text-center">
+            <h2 class="color-{{theme.primaryColor}}">Let's Discuss</h2>
+            <h1>{{'Contact' | translate: lang}}</h1>
           </div>
         </div>
       </div>
-    </form>
+      <div class="row mb-0">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <form [formGroup]="contactForm" class="p-0">
+            <div class="container-fluid pt-4 pb-4">
+              <div class="row">
+                <div class="col-lg-12 col-md-12">
+                  <div class="container-fluid m-0 ps-3 pe-3">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-12 form-group">
+                        <label for="name">{{'Name' | translate: lang}}</label>
+                        <input id="name" type="text" class="form-control" placeholder="Your Name" autocomplete="off"
+                               formControlName="name"/>
+                        <div *ngIf="submitted && contactForm.controls['name'].errors" class="mt-1">
+                          <div *ngIf="contactForm.controls['name'].errors['required']" class="color-red">Name is
+                            required.
+                          </div>
+                          <div *ngIf="contactForm.controls['name'].errors['minlength']" class="color-red">Name should be
+                            6 or
+                            more characters long.
+                          </div>
+                          <div *ngIf="contactForm.controls['name'].errors['maxlength']" class="color-red">Name should
+                            not be
+                            more than 60 characters long.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-12">
+                        <label for="email">{{'Email' | translate: lang}}</label>
+                        <input id="email" type="text" class="form-control" placeholder="Your Email" autocomplete="off"
+                               formControlName="email"/>
+                        <div *ngIf="submitted && contactForm.controls['email'].errors" class="mt-1">
+                          <div *ngIf="contactForm.controls['email'].errors['required']" class="color-red">Email is
+                            required
+                          </div>
+                          <div *ngIf="contactForm.controls['email'].errors['email']" class="color-red">Email is invalid
+                          </div>
+                          <div *ngIf="contactForm.controls['email'].errors['maxlength']" class="color-red">Email should
+                            not be
+                            more than 250 characters long.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 form-group">
+                        <label for="subject">{{'Subject' | translate: lang}}</label>
+                        <input id="subject" type="text" class="form-control" placeholder="Your Subject"
+                               autocomplete="off"
+                               formControlName="subject"/>
+                        <div *ngIf="submitted && contactForm.controls['subject'].errors" class="mt-1">
+                          <div *ngIf="contactForm.controls['subject'].errors['required']" class="color-red">Subject is
+                            required
+                          </div>
+                          <div *ngIf="contactForm.controls['subject'].errors['minlength']" class="color-red">Subject
+                            should be
+                            15 or
+                            more characters long.
+                          </div>
+                          <div *ngIf="contactForm.controls['subject'].errors['maxlength']" class="color-red">Subject
+                            should
+                            not be
+                            more than 100 characters long.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 form-group">
+                        <label for="message">{{'Description' | translate: lang}}
+                          ({{messageCount()}} {{'Characters Remaining' | translate: lang}})</label>
+                        <textarea id="message" class="form-control height-150px" placeholder="Your Description"
+                                  formControlName="message"></textarea>
+                        <div *ngIf="submitted && contactForm.controls['message'].errors" class="mt-1">
+                          <div *ngIf="contactForm.controls['message'].errors['required']" class="color-red">Description
+                            is
+                            required
+                          </div>
+                          <div *ngIf="contactForm.controls['message'].errors['minlength']" class="color-red">Description
+                            should be 30 or
+                            more characters long.
+                          </div>
+                          <div *ngIf="contactForm.controls['message'].errors['maxlength']" class="color-red">Description
+                            should not be
+                            more than 500 characters long.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row height-40px">
+                      <div class="col-lg-6 col-md-12 form-group">
+                        <h6 *ngIf="showAlert" class="line-height-40px {{alert.type}}">{{alert.msg}}</h6>
+                      </div>
+                      <div class="col-lg-6 col-md-12 form-group text-right contact-button">
+                        <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="send()">
+                          Send
+                        </button>
+                        <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5" (click)="reset()">
+                          Reset
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="height-30px"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -12,6 +12,7 @@ import {CategoryService} from 'src/app/admin/category/services/category/category
 import {Category} from 'src/app/admin/category/models/Category';
 import {Icon} from "src/app/shared/models/Icon";
 import {Theme} from "src/app/shared/models/Theme";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-category',
@@ -30,7 +31,7 @@ export class Category1Component implements OnInit, AfterViewInit {
   lang: string = '';
   theme!: Theme;
 
-  constructor(private commonService: CommonService, private categoryService: CategoryService, private activatedRoute: ActivatedRoute, private location: Location) {
+  constructor(private commonService: CommonService, private categoryService: CategoryService, private activatedRoute: ActivatedRoute, private location: Location, private messageService: MessageService) {
     this.commonService.setShowNav(true);
     this.initSubscription();
     this.commonService.getIconList().subscribe((data: any) => {
@@ -85,7 +86,11 @@ export class Category1Component implements OnInit, AfterViewInit {
           if ('id' in category && category?.id > 0) {
             this.categoryForm.get("id")?.setValue(category?.id);
             this.location.replaceState("/admin/category/" + category?.id);
-            this.alert = new Alert("Category '" + category?.nme + "' saved successfully.", AlertType.SUCCESS);
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Save',
+              detail: "Category '" + category?.nme + "' saved successfully."
+            });
           } else if ('message' in category) {
             this.alert = new Alert(category?.message, AlertType.WARNING);
           } else this.alert = new Alert("Something went wrong. Please contact support team.", AlertType.ERROR);

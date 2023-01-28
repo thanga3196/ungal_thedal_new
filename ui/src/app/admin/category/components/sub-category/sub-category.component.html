@@ -1,4 +1,5 @@
 <div class="height"></div>
+<p-toast position="bottom-center"></p-toast>
 <div [ngBusy]="{busy: busyLoading, message: 'Loading...'}"></div>
 <div [ngBusy]="{busy: busySaving, message: 'Saving...'}"></div>
 <div class="container-fluid sub-category bg-color-white">
@@ -21,20 +22,17 @@
   </div>
   <div class="row height-20px p-0 m-0"></div>
   <div class="row p-0 m-0">
-    <div class="col-xl-6 col-lg-6 col-md-12 ps-2 height-100per ps-5 pe-5">
-      <h6 *ngIf="showAlert" class="line-height-40px {{alert.type}}">{{alert.msg}}</h6>
-    </div>
-    <div class="col-xl-6 col-lg-6 col-md-12 text-right height-100per line-height-44px px-5">
-      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1">
+    <div class="col-xl-12 col-lg-12 col-md-12 text-right height-100per line-height-44px px-5">
+      <button class="btn bg-color-black color-white ps-5 pe-5 me-1">
         &lt; Search
       </button>
-      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="reset()">
+      <button class="btn bg-color-black color-white ps-5 pe-5 me-1" (click)="reset()">
         Add
       </button>
-      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="save()">
+      <button class="btn bg-color-black color-white ps-5 pe-5 me-1" (click)="save()">
         Save
       </button>
-      <button class="btn bg-color-{{theme.primaryColor}} color-white ps-5 pe-5 me-1" (click)="reset()">
+      <button class="btn bg-color-black color-white ps-5 pe-5 me-1" (click)="reset()">
         Reset
       </button>
     </div>
